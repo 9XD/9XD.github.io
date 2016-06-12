@@ -1,6 +1,6 @@
 {
   "website":{
-    "title": "Jack's blog"
+    "title": "9XD"
   },
   "nav":{
     "home": "Home",
@@ -13,7 +13,8 @@
   },
   "about_me":{
     "about_me": "About Me",
-    "des": "I am a Python engineer with website development, automation Ops and writing scripts experience. Life is a continuous learning process, so work makes me more rigorous, travel makes my life more colorful. I can make lots of friends when I coding and travel."
+    "des": "이제 갓 회사에 입사한 신입, 이게 내 길이 맞나 고민 중인 컴공과 학생, 혹은 이미 현업에서 열심히 달리고 있는 개발자. 험난한 IT 업계에서 9x년생들이 살아남는 이야기를 공유합시다. 나와 같은 직군인 또래의 이야기를 듣고, 새로운 영감과 자극을 받았으면 합니다. 또한 IT업계에서 중요한 ‘커뮤니티 활동’에 한 발자욱 더 다가가는 계기가 되었으면 합니다."
+
   },
   "skills":{
     "my_skills": "My Skills"

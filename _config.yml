@@ -1,7 +1,7 @@
 # Welcome to Jekyll!
 
 # Site settings
-title: "Jalpc"
+title: "9XD 블로그"
 
 baseurl: "/"
 url: "http://9XD.github.io"
@@ -9,20 +9,18 @@ url: "http://9XD.github.io"
 
 # author
 author:
-  name: 'Jack'
-  first_name: 'Jia'
-  last_name: 'Kun'
-  email: 'jack19890614@gmail.com'
-  facebook_username: 'jiakunnj'
-  github_username: 'Jack614'
-  head_img: 'static/img/landing/Jack.jpg'
+  last_name: '9X년생'
+  first_name: '개발자 모임'
+
+  email: 'jayjinjay@gmail.com'
+  facebook_username: 'groups/1565641083693087'
+  head_img: 'static/img/landing/9xd.png'
 
 # landing page
 landing:
   home: 'Home'
   about: 'About'
-  career: 'Career'
-  skills: 'Skills'
+  meetup: 'Meet Up'
   projects: 'Project'
   blog: 'Blog'
   contact: 'Contact'
@@ -61,14 +59,6 @@ donate:
 changyan:
   appid: cysfY7ULn
   conf: prod_861928934cecb7a18e15bedaed9dae29
-
-# share
-bshare:
-  uuid: 513f778e-a8f7-4c20-9ec2-d29cc2328d75
-
-# baidu analytics
-ba:
-  uuid: 317acca9ef9255b934e46371e471431d
 
 # google analytics
 ga:
