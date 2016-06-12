@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+      <meta content="django权限机制" name="description">
+    
+    
+      <meta name="keywords" content="Python,django,permission">
+    
+    <meta name="author" content="Jack">
+
+    <title>
+      
+          Jalpc|Django的权限机制
+      
+    </title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animation CSS -->
+    <link href="/static/css/animate.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/font-mfizz/font-mfizz.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/style.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="/static/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="/static/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="/static/css/pygments.css" rel="stylesheet">
+    <link rel="stylesheet" href="/search/css/cb-search.css">
+
+	<!-- Mainly scripts -->
+	<script src="/static/js/jquery-2.1.1.js"></script>
+
+  <script src="/search/js/bootstrap3-typeahead.min.js"></script>
+
+  <!-- cb-search -->
+  <script src="/search/js/cb-search.js"></script>
+
+      <script>
+      $(function(){
+          $("pre").css('display','block');
+      });
+      </script>
+
+  <!-- Mainly scripts -->
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+	<script src="/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+  <!-- Peity -->
+  <script src="/static/js/plugins/peity/jquery.peity.min.js"></script>
+
+	<!-- Custom and plugin javascript -->
+	<script src="/static/js/inspinia.js"></script>
+	<script src="/static/js/plugins/pace/pace.min.js"></script>
+
+  <!-- Rickshaw -->
+  <script src="/static/js/plugins/rickshaw/vendor/d3.v3.js"></script>
+  <script src="/static/js/plugins/rickshaw/rickshaw.min.js"></script>
+
+  <!-- i18next -->
+  <script src="/static/js/plugins/i18next/i18next.min.js"></script>
+
+	<script src="/static/js/plugins/wow/wow.min.js"></script>
+
+  <!-- jPages -->
+  <script src="/static/js/jPages.js"></script>
+  <script src="/static/js/js.js"></script>
+  <script type="text/javascript">
+        $(function(){
+          /* initiate the plugin */
+          $("div.pag-holder").jPages({
+              containerID  : "pag-itemContainer",
+              perPage      : 5,  /* num of items per page */
+              startPage    : 1,
+              startRange   : 1,
+              midRange     : 3,
+              endRange     : 1
+          });
+      });
+  </script>
+
+  <!-- Baidu analytics -->
+
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?317acca9ef9255b934e46371e471431d";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+
+
+  <!-- Google analytics -->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-73784599-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</head>
+
+	<body id="page-top" class="landing-page">
+
+	
+	    <div class="search-tool" style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px;
+      opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
+    <input type="text" class="form-control search-content" id="search-content" style="position: fixed; top: 60px" 
+           placeholder="Search Blog"
+           >
+
+    <div style="position: fixed; top: 16px; right: 16px; z-index: 9999;">
+        <img src="/search/img/cb-close.png"  id="close-btn"/>
+    </div>
+</div>
+
+<div style="position: fixed; right: 16px; bottom: 20px; z-index: 9999;">
+    <img src="/search/img/cb-search.png"  id="search-btn"  title="Double click Ctrl"/>
+</div>
+
+
+<div class="navbar-wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar">ttt</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Jalpc</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="page-scroll" href="/blog/">Home</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/python/">Python</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/linux/">Linux</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/html/">HTML</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/database/">Database</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/mac/">Mac</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/life/">Life</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</div>
+<div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#inSlider" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+                <div class="carousel-caption">
+                </div>
+                <div class="carousel-image wow zoomIn">
+                    <!-- <img src="static/img/landing/laptop.png" alt="laptop"/> -->
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back one"></div>
+
+        </div>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back two"></div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+	
+
+    <div class="wrapper wrapper-content  animated fadeInRight article">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="pull-right">
+                    	
+                        	<button class="btn btn-white btn-xs" type="button">Python</button>
+                        
+                    </div>
+                    <div class="text-center article-title">
+                    <span class="text-muted"><i class="fa fa-clock-o"></i> 6 Feb 2016</span>
+                        <h1>
+                            Django的权限机制
+                        </h1>
+                    </div>
+                    	<h4 id="django">一、Django权限机制概述</h4>
+
+<p>权限机制能够约束用户行为，控制页面的显示内容，也能使API更加安全和灵活；用好权限机制，能让系统更加强大和健壮。因此，基于Django的开发，理清Django权限机制是非常必要的。</p>
+
+<h5 id="django-1">1.Django的权限控制</h5>
+
+<p>Django用user, group和permission完成了权限机制，这个权限机制是将属于model的某个permission赋予user或group，可以理解为全局的权限，即如果用户A对数据模型（model）B有可写权限，那么A能修改model B的所有实例（objects）。group的权限也是如此，如果为group C 赋予model B的可写权限，则隶属于group C 的所有用户，都可以修改model B的所有实例。</p>
+
+<p>这种权限机制只能解决一些简单的应用需求，而大部分应用场景下，需要更细分的权限机制。以博客系统为例，博客系统的用户可分为『管理员』、『编辑』、『作者』和『读者』四个用户组；博客系统管理员和编辑具有查看、修改和删除所有的文章的权限，作者只能修改和删除自己写的文章，而读者则只有阅读权限。管理员、编辑和读者的权限，我们可以用全局权限做控制，而对于作者，全局权限无法满足需求，仅通过全局权限，要么允许作者编辑不属于自己的文章，要么让作者连自己的文章都无法修改。</p>
+
+<p>上述的应用场景，Django自带的权限机制无法满足需求，需要引入另一种更细的权限机制：<strong>对象权限（object permission）</strong>。</p>
+
+<p>Object Permission是一种对象颗粒度上的权限机制，它允许为每个具体对象授权。仍沿用最开始的例子，如果model B有三个实例 B1，B2 和B3，如果我们把B1的可写权限赋予用户A，则A可以修改B1对象，而对B2，B3无法修改。对group也一样，如果将B2的可写权限赋予group C，则隶属于group C的所有用户均可以修改B2，但无法修改B1和B3。结合Django自带权限机制和object permission，博客系统中作者的权限控制迎刃而解：系统全局上不允许作者编辑文章，而对于属于作者的具体文章，赋予编辑权限即可。</p>
+
+<p>Django其实包含了object permission的框架，但没有具体实现，object permission的实现需要借助第三方app django-guardian，我们在开发中用调用django guradian封装好的方法即可。</p>
+
+<h5 id="django-2">2.Django的权限项</h5>
+
+<p>Django用permission对象存储权限项，每个model默认都有三个permission，即add model, change model和delete model。例如，定义一个名为『Car』model，定义好Car之后，会自动创建相应的三个permission：add_car, change_car和delete_car。Django还允许自定义permission，例如，我们可以为Car创建新的权限项：drive_car, clean_car, fix_car等等</p>
+
+<p>需要注意的是，permission总是与model对应的，如果一个object不是model的实例，我们无法为它创建/分配权限。</p>
+
+<h4 id="django-">二、Django 自带权限机制的应用</h4>
+
+<h5 id="permission">1.Permission</h5>
+
+<p>如上文所述，Django定义每个model后，默认都会添加该model的add, change和delete三个permission，自定义的permission可以在我们定义model时手动添加：</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Task</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">permissions</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="p">(</span><span class="s">"view_task"</span><span class="p">,</span> <span class="s">"Can see available tasks"</span><span class="p">),</span>
+            <span class="p">(</span><span class="s">"change_task_status"</span><span class="p">,</span> <span class="s">"Can change the status of tasks"</span><span class="p">),</span>
+            <span class="p">(</span><span class="s">"close_task"</span><span class="p">,</span> <span class="s">"Can remove a task by setting its status as closed"</span><span class="p">),</span>
+        <span class="p">)</span>
+</code></pre>
+</div>
+
+<p>每个permission都是django.contrib.auth.Permission类型的实例，该类型包含三个字段name, codename 和 content_type，其中 content_type反应了permission属于哪个model，codename如上面的view_task，代码逻辑中检查权限时要用， name是permission的描述，将permission打印到屏幕或页面时默认显示的就是name</p>
+
+<p>在model中创建自定义权限，从系统开发的角度，可理解为创建系统的内置权限，如果需求中涉及到用户使用系统时创建自定义权限，则要通过下面方法：</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">myapp.models</span> <span class="kn">import</span> <span class="n">BlogPost</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">Permission</span>
+<span class="kn">from</span> <span class="nn">django.contrib.contenttypes.models</span> <span class="kn">import</span> <span class="n">ContentType</span>
+ 
+<span class="n">content_type</span> <span class="o">=</span> <span class="n">ContentType</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_for_model</span><span class="p">(</span><span class="n">BlogPost</span><span class="p">)</span>
+<span class="n">permission</span> <span class="o">=</span> <span class="n">Permission</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">codename</span><span class="o">=</span><span class="s">'can_publish'</span><span class="p">,</span>
+                                       <span class="n">name</span><span class="o">=</span><span class="s">'Can Publish Posts'</span><span class="p">,</span>
+                                       <span class="n">content_type</span><span class="o">=</span><span class="n">content_type</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h5 id="user-permission">2.User Permission管理</h5>
+
+<p>User对象的user_permission字段管理用户的权限：</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">myuser</span><span class="o">.</span><span class="n">user_permissions</span> <span class="o">=</span> <span class="p">[</span><span class="n">permission_list</span><span class="p">]</span>
+<span class="n">myuser</span><span class="o">.</span><span class="n">user_permissions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">permission</span><span class="p">,</span> <span class="n">permission</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span> <span class="c">#增加权限</span>
+<span class="n">myuser</span><span class="o">.</span><span class="n">user_permissions</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">permission</span><span class="p">,</span> <span class="n">permission</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span> <span class="c">#删除权限</span>
+<span class="n">myuser</span><span class="o">.</span><span class="n">user_permissions</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span> <span class="c">#清空权限</span>
+ 
+<span class="c">##############################################################</span>
+<span class="c"># 注：上面的permission为django.contrib.auth.Permission类型的实例</span>
+<span class="c">##############################################################</span>
+</code></pre>
+</div>
+
+<p>检查用户权限用has_perm()方法：</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">myuser</span><span class="o">.</span><span class="n">has_perm</span><span class="p">(</span><span class="s">'myapp.fix_car'</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>has_perm()方法的参数，即permission的codename，但传递参数时需要加上model 所属app的前缀，格式为.。</p>
+
+<p>无论permission赋予user还是group，has_perm()方法均适用</p>
+
+<p>附注：</p>
+
+<p>user.get_all_permissions()方法列出用户的所有权限，返回值是permission name的list</p>
+
+<p>user.get_group_permissions()方法列出用户所属group的权限，返回值是permission name的list</p>
+
+<h5 id="group-permission">3.Group Permission管理</h5>
+
+<p>group permission管理逻辑与user permission管理一致，group中使用permissions字段做权限管理：</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">group</span><span class="o">.</span><span class="n">permissions</span> <span class="o">=</span> <span class="p">[</span><span class="n">permission_list</span><span class="p">]</span>
+<span class="n">group</span><span class="o">.</span><span class="n">permissions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">permission</span><span class="p">,</span> <span class="n">permission</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="n">group</span><span class="o">.</span><span class="n">permissions</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">permission</span><span class="p">,</span> <span class="n">permission</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="n">group</span><span class="o">.</span><span class="n">permissions</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>权限检查：</p>
+
+<p>依然使用user.has_perm()方法。</p>
+
+<h5 id="permissionrequired-">4.permission_required 装饰器</h5>
+
+<p>权限能约束用户行为，当业务逻辑中涉及到权限检查时，decorator能够分离权限验证和核心的业务逻辑，使代码更简洁，逻辑更清晰。permission的decorator为permission_required：</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">permission_required</span>
+ 
+<span class="nd">@permission_required</span><span class="p">(</span><span class="s">'car.drive_car'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">my_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="o">...</span>
+</code></pre>
+</div>
+
+<h5 id="template">5.Template中的权限检查</h5>
+
+<p>Template中使用全局变量perms存储当前用户的所有权限，权限检查可以参考下面例子：</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>{% if perms.main.add_page %}
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"dropdown"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"dropdown-toggle"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>Pages <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;&lt;/a&gt;</span>
+              <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">role=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{% url "</span><span class="na">main:admin_pages</span><span class="err">"</span> <span class="err">%}"</span><span class="nt">&gt;</span>All Pages<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{% url "</span><span class="na">main:admin_page</span><span class="err">"</span> <span class="err">%}"</span><span class="nt">&gt;</span>New Page<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{% url "</span><span class="na">main:admin_pages</span><span class="err">"</span> <span class="err">%}?</span><span class="na">draft=</span><span class="s">true"</span><span class="nt">&gt;</span>Drafts<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;/ul&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+{% endif %}
+</code></pre>
+</div>
+
+<h4 id="django-guardianobject-permission">三、基于Django-guardian的object permission的应用</h4>
+
+<p>Django-guardian基于django的原生逻辑扩展了django的权限机制，应用django-guardian后，可以使用django-guardian提供的方法以及django的原生方法检查全局权限，django-guardian提供的object permission机制使django的权限机制更加完善。</p>
+
+<p>django-guardian详细的使用文档请参考官方文档，其object permission常用方法如下：</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">guardian.shortcuts</span> <span class="kn">import</span> <span class="n">assign_perm</span><span class="p">,</span> <span class="n">get_perms</span>
+<span class="kn">from</span> <span class="nn">guardian.core</span> <span class="kn">import</span> <span class="n">ObjectPermissionChecker</span>
+<span class="kn">from</span> <span class="nn">guardian.decorators</span> <span class="kn">import</span> <span class="n">permission_required</span>
+</code></pre>
+</div>
+
+<h5 id="object-permission">1.添加object permission</h5>
+
+<p>添加object permission使用assign_perm()方法，如为用户添加对mycar对象的drive_car权限：</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">assign_perm</span><span class="p">(</span><span class="s">'myapp.drive_car'</span><span class="p">,</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">mycar</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>assign_perm()方法也可用于group</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">assign_perm</span><span class="p">(</span><span class="s">'myapp.drive_car'</span><span class="p">,</span> <span class="n">mygroup</span><span class="p">,</span> <span class="n">mycar</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h5 id="section">2.权限检查</h5>
+
+<h6 id="global-permission">2.1 Global permission</h6>
+
+<p>get_perms()方法用于检查用户的“全局权限”（global permission），与user.has_perm()异曲同工，如：</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c">#############################</span>
+<span class="c"># It works! </span>
+<span class="c">#############################</span>
+ <span class="k">if</span> <span class="ow">not</span> <span class="s">'main.change_post'</span> <span class="ow">in</span> <span class="n">get_perms</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">post</span><span class="p">):</span>
+     <span class="k">raise</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">'Forbidden'</span><span class="p">)</span>
+ 
+<span class="c">#############################</span>
+<span class="c"># It works, too!</span>
+<span class="c">#############################</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">has_perm</span><span class="p">(</span><span class="s">'main.change_post'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">'Forbidden'</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>例子中虽然把post object作为参数传给get_perms()方法，但它只检查user的全局权限中是否有main.change_post权限，很多情况下可用原生的user.has_perm取代，但user和group均可作为get_perms()的传入参数，某些情况下可以使代码更简洁。</p>
+
+<h6 id="object-permission-1">2.2 Object permission</h6>
+
+<p>Django-guardian中使用ObjectPermissionChecker检查用户的object permission，示例如下：</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">checker</span> <span class="o">=</span> <span class="n">ObjectPermissionChecker</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">checker</span><span class="o">.</span><span class="n">has_perm</span><span class="p">(</span><span class="s">'main.change_post'</span><span class="p">,</span> <span class="n">post</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h5 id="permissionrequired">3.permission_required装饰器</h5>
+
+<p>guardian.decorators.permission_required是django-guardian权限检查的decorator，既可以检查全局权限，又可以检查对象权限（object permission），其中，accept_global_perms参数指出是否检查user的global permission，如：</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">guardian.decorators</span> <span class="kn">import</span> <span class="n">permission_required</span>
+ 
+<span class="k">class</span> <span class="nc">DeletePost</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="nd">@method_decorator</span><span class="p">(</span><span class="n">permission_required</span><span class="p">(</span><span class="s">'main.delete_post'</span><span class="p">,</span> 
+                            <span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Post</span><span class="p">,</span> <span class="s">'id'</span><span class="p">,</span> <span class="s">'pk'</span><span class="p">),</span> 
+                            <span class="n">accept_global_perms</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">pk</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">pk</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pk</span><span class="p">)</span>
+            <span class="n">cur_post</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span>
+            <span class="n">is_draft</span> <span class="o">=</span> <span class="n">cur_post</span><span class="o">.</span><span class="n">is_draft</span>
+ 
+            <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s">'main:admin_posts'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">is_draft</span><span class="p">:</span>
+                <span class="n">url</span> <span class="o">=</span> <span class="s">'{0}?draft=true'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>    
+            <span class="n">cur_post</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+        <span class="k">except</span> <span class="n">models</span><span class="o">.</span><span class="n">Post</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Http404</span>
+ 
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>注：</p>
+
+<p>decorator中的(models.Post, ‘id’, ‘pk’)部分，用于指定object实例，如果忽略这个参数，则不论accept_global_perms值为True还是False，均仅仅检查全局权限。</p>
+
+<h4 id="section-1">四、结论</h4>
+
+<p>Django原生提供了一种简单的全局权限（global permission）控制机制，但很多应用场景下，对象权限（object permission）更加有用；django-guardian是目前比较活跃的一个django extension，提供了一种有效的object permission控制机制，与django原生机制一脉相承，推荐使用。</p>
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                                <h5>Tags:</h5>
+                                
+                                    <button class="btn btn-white btn-xs" type="button">django</button>
+                                
+                                    <button class="btn btn-white btn-xs" type="button">permission</button>
+                                
+                                    <button class="btn btn-white btn-xs" type="button">权限</button>
+                                
+                        </div>
+                        <div class="col-md-6">
+                            <div class="small text-right">
+                                <h5>Stats:</h5>
+                                <div> <i class="fa fa-comments-o"> </i> <span id = "url::http://www.jack003.com/python/2016/02/06/django-permission.html" class = "cy_cmt_count" ></span> comments</div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- donate -->
+                            
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+    Donate
+</button>
+<div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated flipInY">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Donate Me</h4>
+                <small class="font-bold">Thanks for your support!</small>
+            </div>
+            <div class="modal-body">
+                <div class="tabbable" id="tabs-960227">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#panel-405278" data-toggle="tab">Alipay</a>
+                        </li>
+                        <li>
+                            <a href="#panel-874705" data-toggle="tab">Wechat</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="panel-405278">
+                            <div class="text-center">
+                                <img src="/static/img/pay/alipay.png"" height="250" width="250">
+                            </div>    
+                        </div>
+                        <div class="tab-pane" id="panel-874705">
+                            <div class="text-center">
+                                <img src="/static/img/pay/wechat.png"" height="250" width="250">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                            
+                            <br>
+                            <!-- share -->
+                            
+                                <h2>Share:</h2>
+
+<div class="bshare-custom">
+	<a title="分享到微信" class="bshare-weixin"></a>
+	<a title="分享到QQ空间" class="bshare-qzone"></a>
+	<a title="分享到新浪微博" class="bshare-sinaminiblog"></a>
+	<a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>
+</div>
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=513f778e-a8f7-4c20-9ec2-d29cc2328d75&amp;pophcol=1&amp;lang=zh"></script>
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+                            
+                            <br>
+                            <!-- comment -->
+                            
+                                <h2>Comments:</h2>
+
+<!--高速版-->
+<div id="SOHUCS"></div>
+<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: 'cysfY7ULn',
+        conf: 'prod_861928934cecb7a18e15bedaed9dae29'
+    });
+</script>     
+
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+	
+	    
+<script id="cy_cmt_num" src="http://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cysfY7ULn"></script>
+<script>
+
+    $(document).ready(function () {
+
+        $('body').scrollspy({
+            target: '.navbar-fixed-top',
+            offset: 80
+        });
+
+        // Page scrolling feature
+        $('a.page-scroll').bind('click', function(event) {
+            var link = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $(link.attr('href')).offset().top - 50
+            }, 500);
+            event.preventDefault();
+            $("#navbar").collapse('hide');
+        });
+    });
+
+    var cbpAnimatedHeader = (function() {
+        var docElem = document.documentElement,
+                header = document.querySelector( '.navbar-default' ),
+                didScroll = false,
+                changeHeaderOn = 200;
+        function init() {
+            window.addEventListener( 'scroll', function( event ) {
+                if( !didScroll ) {
+                    didScroll = true;
+                    setTimeout( scrollPage, 250 );
+                }
+            }, false );
+        }
+        function scrollPage() {
+            var sy = scrollY();
+            if ( sy >= changeHeaderOn ) {
+                $(header).addClass('navbar-scroll')
+            }
+            else {
+                $(header).removeClass('navbar-scroll')
+            }
+            didScroll = false;
+        }
+        function scrollY() {
+            return window.pageYOffset || docElem.scrollTop;
+        }
+        init();
+
+    })();
+
+    // Activate WOW.js plugin for animation on scrol
+    new WOW().init();
+
+</script>
+
+	
+
+</body>
+
+</html>

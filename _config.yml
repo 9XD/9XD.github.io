@@ -1,21 +1,87 @@
 # Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+title: "Jalpc"
+
+baseurl: "/"
+url: "http://9XD.github.io"
+# url: "http://127.0.0.1:4000"
+
+# author
+author:
+  name: 'Jack'
+  first_name: 'Jia'
+  last_name: 'Kun'
+  email: 'jack19890614@gmail.com'
+  facebook_username: 'jiakunnj'
+  github_username: 'Jack614'
+  head_img: 'static/img/landing/Jack.jpg'
+
+# landing page
+landing:
+  home: 'Home'
+  about: 'About'
+  career: 'Career'
+  skills: 'Skills'
+  projects: 'Project'
+  blog: 'Blog'
+  contact: 'Contact'
+
+# my projects
+project:
+  saplatform: 
+    name: 'Saplatform'
+    url: '/Jack614/saplatform'
+    img: 'static/img/landing/saplatform.jpg'
+  jalpc: 
+    name: 'Jalpc'
+    url: '/Jack614/jalpc_jekyll_theme'
+    img: 'static/img/landing/jekyll.jpg'
+  raspberry: 
+    name: 'My Raspberry'
+    url: '/Jack614/my_raspberry_pi'
+    img: 'static/img/landing/raspberry.jpg'
+
+# blog index
+index:
+  home: 'Home'
+  python: 'Python'
+  linux: 'Linux'
+  html: 'HTML'
+  database: 'Database'
+  mac: 'Mac'
+  life: 'Life'
+
+# donate
+donate:
+  wechat: 'static/img/pay/wechat.png'
+  alipay: 'static/img/pay/alipay.png'
+
+# comment
+changyan:
+  appid: cysfY7ULn
+  conf: prod_861928934cecb7a18e15bedaed9dae29
+
+# share
+bshare:
+  uuid: 513f778e-a8f7-4c20-9ec2-d29cc2328d75
+
+# baidu analytics
+ba:
+  uuid: 317acca9ef9255b934e46371e471431d
+
+# google analytics
+ga:
+  id: UA-73784599-1
+
+# blog img path
+img_path: '/static/img/blog'
 
 # Build settings
+encoding: "utf-8"
+
+highlighter: rouge
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge

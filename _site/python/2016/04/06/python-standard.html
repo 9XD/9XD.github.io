@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+      <meta content="Python编码规范" name="description">
+    
+    
+      <meta name="keywords" content="PEP8,Python">
+    
+    <meta name="author" content="Jack">
+
+    <title>
+      
+          Jalpc|PEP8 Python 编码规范整理
+      
+    </title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animation CSS -->
+    <link href="/static/css/animate.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/font-mfizz/font-mfizz.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/style.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="/static/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="/static/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="/static/css/pygments.css" rel="stylesheet">
+    <link rel="stylesheet" href="/search/css/cb-search.css">
+
+	<!-- Mainly scripts -->
+	<script src="/static/js/jquery-2.1.1.js"></script>
+
+  <script src="/search/js/bootstrap3-typeahead.min.js"></script>
+
+  <!-- cb-search -->
+  <script src="/search/js/cb-search.js"></script>
+
+      <script>
+      $(function(){
+          $("pre").css('display','block');
+      });
+      </script>
+
+  <!-- Mainly scripts -->
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+	<script src="/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+  <!-- Peity -->
+  <script src="/static/js/plugins/peity/jquery.peity.min.js"></script>
+
+	<!-- Custom and plugin javascript -->
+	<script src="/static/js/inspinia.js"></script>
+	<script src="/static/js/plugins/pace/pace.min.js"></script>
+
+  <!-- Rickshaw -->
+  <script src="/static/js/plugins/rickshaw/vendor/d3.v3.js"></script>
+  <script src="/static/js/plugins/rickshaw/rickshaw.min.js"></script>
+
+  <!-- i18next -->
+  <script src="/static/js/plugins/i18next/i18next.min.js"></script>
+
+	<script src="/static/js/plugins/wow/wow.min.js"></script>
+
+  <!-- jPages -->
+  <script src="/static/js/jPages.js"></script>
+  <script src="/static/js/js.js"></script>
+  <script type="text/javascript">
+        $(function(){
+          /* initiate the plugin */
+          $("div.pag-holder").jPages({
+              containerID  : "pag-itemContainer",
+              perPage      : 5,  /* num of items per page */
+              startPage    : 1,
+              startRange   : 1,
+              midRange     : 3,
+              endRange     : 1
+          });
+      });
+  </script>
+
+  <!-- Baidu analytics -->
+
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?317acca9ef9255b934e46371e471431d";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+
+
+  <!-- Google analytics -->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-73784599-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</head>
+
+	<body id="page-top" class="landing-page">
+
+	
+	    <div class="search-tool" style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px;
+      opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
+    <input type="text" class="form-control search-content" id="search-content" style="position: fixed; top: 60px" 
+           placeholder="Search Blog"
+           >
+
+    <div style="position: fixed; top: 16px; right: 16px; z-index: 9999;">
+        <img src="/search/img/cb-close.png"  id="close-btn"/>
+    </div>
+</div>
+
+<div style="position: fixed; right: 16px; bottom: 20px; z-index: 9999;">
+    <img src="/search/img/cb-search.png"  id="search-btn"  title="Double click Ctrl"/>
+</div>
+
+
+<div class="navbar-wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar">ttt</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Jalpc</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="page-scroll" href="/blog/">Home</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/python/">Python</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/linux/">Linux</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/html/">HTML</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/database/">Database</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/mac/">Mac</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/life/">Life</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</div>
+<div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#inSlider" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+                <div class="carousel-caption">
+                </div>
+                <div class="carousel-image wow zoomIn">
+                    <!-- <img src="static/img/landing/laptop.png" alt="laptop"/> -->
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back one"></div>
+
+        </div>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back two"></div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+	
+
+    <div class="wrapper wrapper-content  animated fadeInRight article">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="pull-right">
+                    	
+                        	<button class="btn btn-white btn-xs" type="button">Python</button>
+                        
+                    </div>
+                    <div class="text-center article-title">
+                    <span class="text-muted"><i class="fa fa-clock-o"></i> 6 Apr 2016</span>
+                        <h1>
+                            PEP8 Python 编码规范整理
+                        </h1>
+                    </div>
+                    	<h4 id="section">一、代码编排</h4>
+
+<ol>
+  <li>
+    <p>缩进。4个空格的缩进（编辑器都可以完成此功能），不使用Tap，更不能混合使用Tap和空格。</p>
+  </li>
+  <li>
+    <p>每行最大长度79，换行可以使用反斜杠，最好使用圆括号。换行点要在操作符的后边敲回车。</p>
+  </li>
+  <li>
+    <p>类和top-level函数定义之间空两行；类中的方法定义之间空一行；函数内逻辑无关段落之间空一行；其他地方尽量不要再空行。</p>
+  </li>
+</ol>
+
+<h4 id="section-1">二、文档编排</h4>
+
+<ol>
+  <li>
+    <p>模块内容的顺序：模块说明和docstring—import—globals&amp;constants—其他定义。其中import部分，又按标准、三方和自己编写顺序依次排放，之间空一行。</p>
+  </li>
+  <li>
+    <p>不要在一句import中多个库，比如import os, sys不推荐。</p>
+  </li>
+  <li>
+    <p>如果采用from XX import XX引用库，可以省略‘module.’，都是可能出现命名冲突，这时就要采用import XX。</p>
+  </li>
+</ol>
+
+<h4 id="section-2">三、空格的使用</h4>
+
+<h6 id="section-3">总体原则，避免不必要的空格。</h6>
+
+<ol>
+  <li>
+    <p>各种右括号前不要加空格。</p>
+  </li>
+  <li>
+    <p>逗号、冒号、分号前不要加空格。</p>
+  </li>
+  <li>
+    <p>函数的左括号前不要加空格。如Func(1)。</p>
+  </li>
+  <li>
+    <p>序列的左括号前不要加空格。如list[2]。</p>
+  </li>
+  <li>
+    <p>操作符左右各加一个空格，不要为了对齐增加空格。</p>
+  </li>
+  <li>
+    <p>函数默认参数使用的赋值符左右省略空格。</p>
+  </li>
+  <li>
+    <p>不要将多句语句写在同一行，尽管使用‘；’允许。</p>
+  </li>
+  <li>
+    <p>if/for/while语句中，即使执行语句只有一句，也必须另起一行。</p>
+  </li>
+</ol>
+
+<h4 id="section-4">四、注释</h4>
+
+<h6 id="section-5">总体原则，错误的注释不如没有注释。所以当一段代码发生变化时，第一件事就是要修改注释！</h6>
+
+<h6 id="section-6">注释必须使用英文，最好是完整的句子，首字母大写，句后要有结束符，结束符后跟两个空格，开始下一句。如果是短语，可以省略结束符。</h6>
+
+<ol>
+  <li>块注释，在一段代码前增加的注释。在‘#’后加一空格。段落之间以只有‘#’的行间隔。比如：</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># Description : Module config.
+# 
+# Input : None
+#
+# Output : None
+</code></pre>
+</div>
+
+<ol>
+  <li>
+    <p>行注释，在一句代码后加注释。比如：x = x + 1 # Increment x
+但是这种方式尽量少使用。</p>
+  </li>
+  <li>
+    <p>避免无谓的注释。</p>
+  </li>
+</ol>
+
+<h4 id="section-7">五、文档描述</h4>
+
+<ol>
+  <li>
+    <p>为所有的共有模块、函数、类、方法写docstrings；非共有的没有必要，但是可以写注释（在def的下一行）。</p>
+  </li>
+  <li>
+    <p>如果docstring要换行，参考如下例子,详见PEP 257
+&gt;Return a foobang
+Optional plotz says to frobnicate the bizbaz first.</p>
+  </li>
+</ol>
+
+<h4 id="section-8">六、命名规范</h4>
+<p>###### 总体原则，新编代码必须按下面命名风格进行，现有库的编码尽量保持风格。
+1. 尽量单独使用小写字母‘l’，大写字母‘O’等容易混淆的字母。</p>
+
+<ol>
+  <li>
+    <p>模块命名尽量短小，使用全部小写的方式，可以使用下划线。</p>
+  </li>
+  <li>
+    <p>包命名尽量短小，使用全部小写的方式，不可以使用下划线。</p>
+  </li>
+  <li>
+    <p>类的命名使用CapWords的方式，模块内部使用的类采用_CapWords的方式。</p>
+  </li>
+  <li>
+    <p>异常命名使用CapWords+Error后缀的方式。</p>
+  </li>
+  <li>
+    <p>全局变量尽量只在模块内有效，类似C语言中的static。实现方法有两
+种，一是__all__机制;二是前缀一个下划线。</p>
+  </li>
+  <li>
+    <p>函数命名使用全部小写的方式，可以使用下划线。</p>
+  </li>
+  <li>
+    <p>常量命名使用全部大写的方式，可以使用下划线。</p>
+  </li>
+  <li>
+    <p>类的属性（方法和变量）命名使用全部小写的方式，可以使用下划线。</p>
+  </li>
+  <li>
+    <p>类的属性有3种作用域public、non-public和subclass API，可以理解成C++中的public、private、protected，non-public属性前，前缀一条下划线。</p>
+  </li>
+  <li>
+    <p>类的属性若与关键字名字冲突，后缀一下划线，尽量不要使用缩略等其他方式。</p>
+  </li>
+  <li>
+    <p>为避免与子类属性命名冲突，在类的一些属性前，前缀两条下划线。比如：类Foo中声明__a,访问时，只能通过Foo._Foo__a，避免歧义。如果子类也叫Foo，那就无能为力了。</p>
+  </li>
+  <li>
+    <p>类的方法第一个参数必须是self，而静态方法第一个参数必须是cls。</p>
+  </li>
+</ol>
+
+<h4 id="section-9">七、编码建议</h4>
+
+<ol>
+  <li>
+    <p>编码中考虑到其他python实现的效率等问题，比如运算符‘+’在CPython（Python）中效率很高，都是Jython中却非常低，所以应该采用.join()的方式。</p>
+  </li>
+  <li>
+    <p>尽可能使用‘is’‘is not’取代‘==’，比如if x is not None 要优于if x。</p>
+  </li>
+  <li>
+    <p>使用基于类的异常，每个模块或包都有自己的异常类，此异常类继承自Exception。</p>
+  </li>
+  <li>
+    <p>异常中不要使用裸露的except，except后跟具体的exceptions。</p>
+  </li>
+  <li>
+    <p>异常中try的代码尽可能少。比如：</p>
+  </li>
+</ol>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">collection</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="k">except</span> <span class="nb">KeyError</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">key_not_found</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">handle_value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>要优于</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+<span class="c"># Too broad!</span>
+    <span class="k">return</span> <span class="n">handle_value</span><span class="p">(</span><span class="n">collection</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+<span class="k">except</span> <span class="nb">KeyError</span><span class="p">:</span>
+<span class="c"># Will also catch KeyError raised by handle_value()</span>
+    <span class="k">return</span> <span class="n">key_not_found</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<ol>
+  <li>
+    <p>使用startswith() and endswith()代替切片进行序列前缀或后缀的检查。比如：
+Yes: <code class="highlighter-rouge">if foo.startswith('bar')</code>:优于
+No: <code class="highlighter-rouge">if foo[:3] == 'bar'</code></p>
+  </li>
+  <li>
+    <p>使用isinstance()比较对象的类型。比如
+Yes: <code class="highlighter-rouge">if isinstance(obj, int)</code>: 优于
+No: <code class="highlighter-rouge">if type(obj) is type(1)</code>:</p>
+  </li>
+  <li>
+    <p>判断序列空或不空，有如下规则
+Yes: <code class="highlighter-rouge">if not seq:
+if seq:</code>
+优于
+No: <code class="highlighter-rouge">if len(seq)
+if not len(seq)</code></p>
+  </li>
+  <li>
+    <p>字符串不要以空格收尾。</p>
+  </li>
+  <li>
+    <p>二进制数据判断使用 if boolvalue的方式。</p>
+  </li>
+</ol>
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                                <h5>Tags:</h5>
+                                
+                                    <button class="btn btn-white btn-xs" type="button">优化</button>
+                                
+                        </div>
+                        <div class="col-md-6">
+                            <div class="small text-right">
+                                <h5>Stats:</h5>
+                                <div> <i class="fa fa-comments-o"> </i> <span id = "url::http://www.jack003.com/python/2016/04/06/python-standard.html" class = "cy_cmt_count" ></span> comments</div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- donate -->
+                            
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+    Donate
+</button>
+<div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated flipInY">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Donate Me</h4>
+                <small class="font-bold">Thanks for your support!</small>
+            </div>
+            <div class="modal-body">
+                <div class="tabbable" id="tabs-960227">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#panel-405278" data-toggle="tab">Alipay</a>
+                        </li>
+                        <li>
+                            <a href="#panel-874705" data-toggle="tab">Wechat</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="panel-405278">
+                            <div class="text-center">
+                                <img src="/static/img/pay/alipay.png"" height="250" width="250">
+                            </div>    
+                        </div>
+                        <div class="tab-pane" id="panel-874705">
+                            <div class="text-center">
+                                <img src="/static/img/pay/wechat.png"" height="250" width="250">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                            
+                            <br>
+                            <!-- share -->
+                            
+                                <h2>Share:</h2>
+
+<div class="bshare-custom">
+	<a title="分享到微信" class="bshare-weixin"></a>
+	<a title="分享到QQ空间" class="bshare-qzone"></a>
+	<a title="分享到新浪微博" class="bshare-sinaminiblog"></a>
+	<a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>
+</div>
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=513f778e-a8f7-4c20-9ec2-d29cc2328d75&amp;pophcol=1&amp;lang=zh"></script>
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+                            
+                            <br>
+                            <!-- comment -->
+                            
+                                <h2>Comments:</h2>
+
+<!--高速版-->
+<div id="SOHUCS"></div>
+<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: 'cysfY7ULn',
+        conf: 'prod_861928934cecb7a18e15bedaed9dae29'
+    });
+</script>     
+
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+	
+	    
+<script id="cy_cmt_num" src="http://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cysfY7ULn"></script>
+<script>
+
+    $(document).ready(function () {
+
+        $('body').scrollspy({
+            target: '.navbar-fixed-top',
+            offset: 80
+        });
+
+        // Page scrolling feature
+        $('a.page-scroll').bind('click', function(event) {
+            var link = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $(link.attr('href')).offset().top - 50
+            }, 500);
+            event.preventDefault();
+            $("#navbar").collapse('hide');
+        });
+    });
+
+    var cbpAnimatedHeader = (function() {
+        var docElem = document.documentElement,
+                header = document.querySelector( '.navbar-default' ),
+                didScroll = false,
+                changeHeaderOn = 200;
+        function init() {
+            window.addEventListener( 'scroll', function( event ) {
+                if( !didScroll ) {
+                    didScroll = true;
+                    setTimeout( scrollPage, 250 );
+                }
+            }, false );
+        }
+        function scrollPage() {
+            var sy = scrollY();
+            if ( sy >= changeHeaderOn ) {
+                $(header).addClass('navbar-scroll')
+            }
+            else {
+                $(header).removeClass('navbar-scroll')
+            }
+            didScroll = false;
+        }
+        function scrollY() {
+            return window.pageYOffset || docElem.scrollTop;
+        }
+        init();
+
+    })();
+
+    // Activate WOW.js plugin for animation on scrol
+    new WOW().init();
+
+</script>
+
+	
+
+</body>
+
+</html>

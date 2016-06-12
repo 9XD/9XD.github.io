@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
 
-  {% include head.html %}
+	{% include head.html %}
 
-  <body>
+	<body id="page-top" class="landing-page">
 
-    {% include header.html %}
+	{% if page.title != 'index' %}
+	    {% include header.html %}
+	{% endif %}
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
+    {{ content }}
 
-    {% include footer.html %}
+	{% if page.title != 'index' %}
+	    {% include footer.html %}
+	{% endif %}
 
-  </body>
+</body>
 
 </html>

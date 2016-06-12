@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+      <meta content="ssh非root用户key认证登陆及忽略known_hosts" name="description">
+    
+    
+      <meta name="keywords" content="ssh,linux,key,known_hosts">
+    
+    <meta name="author" content="Jack">
+
+    <title>
+      
+          Jalpc|ssh非root用户key认证登陆及忽略known_hosts
+      
+    </title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animation CSS -->
+    <link href="/static/css/animate.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/font-mfizz/font-mfizz.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/style.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="/static/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="/static/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="/static/css/pygments.css" rel="stylesheet">
+    <link rel="stylesheet" href="/search/css/cb-search.css">
+
+	<!-- Mainly scripts -->
+	<script src="/static/js/jquery-2.1.1.js"></script>
+
+  <script src="/search/js/bootstrap3-typeahead.min.js"></script>
+
+  <!-- cb-search -->
+  <script src="/search/js/cb-search.js"></script>
+
+      <script>
+      $(function(){
+          $("pre").css('display','block');
+      });
+      </script>
+
+  <!-- Mainly scripts -->
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+	<script src="/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+  <!-- Peity -->
+  <script src="/static/js/plugins/peity/jquery.peity.min.js"></script>
+
+	<!-- Custom and plugin javascript -->
+	<script src="/static/js/inspinia.js"></script>
+	<script src="/static/js/plugins/pace/pace.min.js"></script>
+
+  <!-- Rickshaw -->
+  <script src="/static/js/plugins/rickshaw/vendor/d3.v3.js"></script>
+  <script src="/static/js/plugins/rickshaw/rickshaw.min.js"></script>
+
+  <!-- i18next -->
+  <script src="/static/js/plugins/i18next/i18next.min.js"></script>
+
+	<script src="/static/js/plugins/wow/wow.min.js"></script>
+
+  <!-- jPages -->
+  <script src="/static/js/jPages.js"></script>
+  <script src="/static/js/js.js"></script>
+  <script type="text/javascript">
+        $(function(){
+          /* initiate the plugin */
+          $("div.pag-holder").jPages({
+              containerID  : "pag-itemContainer",
+              perPage      : 5,  /* num of items per page */
+              startPage    : 1,
+              startRange   : 1,
+              midRange     : 3,
+              endRange     : 1
+          });
+      });
+  </script>
+
+  <!-- Baidu analytics -->
+
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?317acca9ef9255b934e46371e471431d";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+
+
+  <!-- Google analytics -->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-73784599-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</head>
+
+	<body id="page-top" class="landing-page">
+
+	
+	    <div class="search-tool" style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px;
+      opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
+    <input type="text" class="form-control search-content" id="search-content" style="position: fixed; top: 60px" 
+           placeholder="Search Blog"
+           >
+
+    <div style="position: fixed; top: 16px; right: 16px; z-index: 9999;">
+        <img src="/search/img/cb-close.png"  id="close-btn"/>
+    </div>
+</div>
+
+<div style="position: fixed; right: 16px; bottom: 20px; z-index: 9999;">
+    <img src="/search/img/cb-search.png"  id="search-btn"  title="Double click Ctrl"/>
+</div>
+
+
+<div class="navbar-wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar">ttt</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Jalpc</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="page-scroll" href="/blog/">Home</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/python/">Python</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/linux/">Linux</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/html/">HTML</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/database/">Database</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/mac/">Mac</a></li>
+
+                        
+                            <li>
+                        
+                            <a class="page-scroll" href="/life/">Life</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</div>
+<div id="inSlider" class="carousel carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#inSlider" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+                <div class="carousel-caption">
+                </div>
+                <div class="carousel-image wow zoomIn">
+                    <!-- <img src="static/img/landing/laptop.png" alt="laptop"/> -->
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back one"></div>
+
+        </div>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back two"></div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+	
+
+    <div class="wrapper wrapper-content  animated fadeInRight article">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="pull-right">
+                    	
+                        	<button class="btn btn-white btn-xs" type="button">Linux</button>
+                        
+                    </div>
+                    <div class="text-center article-title">
+                    <span class="text-muted"><i class="fa fa-clock-o"></i> 2 Feb 2015</span>
+                        <h1>
+                            ssh非root用户key认证登陆及忽略known_hosts
+                        </h1>
+                    </div>
+                    	<p>有些时候，我们不能使用root用户在正式环境服务器操作，此时可以使用普通用户，root用户的key认证登陆设置非常简单，普通用户的key认证登陆尝试好几次总算找到了原因，最终还是文件和文件夹权限的问题，下面简单说一下具体的key认证配置方法：（假设这里有两台服务器A、B，A服务器的jack用户要实现key认证登陆B服务器）</p>
+
+<p>在两台服务器上建立jack用户，在A服务器的jack用户下生成jack的公私钥，然后将jack的公钥放入B服务器下jack家目录的<code class="highlighter-rouge">.ssh/authorized_keys</code>里。</p>
+
+<p>下面就是权限配置：被登录主机权限如下：</p>
+
+<ol>
+  <li>
+    <p>chmod 755 /home/jack/</p>
+  </li>
+  <li>
+    <p>chmod 700 /home/jack/.ssh/</p>
+  </li>
+  <li>
+    <p>chmod 600 /home/jack/.ssh/*</p>
+  </li>
+</ol>
+
+<p>原主机最好也做同样配置，这样就大功告成了。</p>
+
+<p>在平时工作中，有时候需要SSH登陆到别的Linux主机上去，但有时候SSH登陆会被禁止，并弹出如下类似提示：</p>
+
+<p>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!Someone could be eavesdropping on you right now (man-in-the-middle attack)!It is also possible that the RSA host key has just been changed.The fingerprint for the RSA key sent by the remote host is36:68:a6:e6:43:34:6b:82:d7:f4:df:1f:c2:e7:37:cc.Please contact your system administrator.Add correct host key in /u/xlian008/.ssh/known_hosts to get rid of this message.Offending key in /u/xlian008/.ssh/known_hosts:2RSA host key for 135.1.35.130 has changed and you have requested strict checking.Host key verification failed.</p>
+
+<p>比较奇怪，于是研究了一下。</p>
+
+<p>ssh会把你每个你访问过计算机的公钥(public key)都记录在<code class="highlighter-rouge">~/.ssh/known_hosts</code>。当下次访问相同计算机时，OpenSSH会核对公钥。如果公钥不同，OpenSSH会发出警告， 避免你受到DNS Hijack之类的攻击。我在上面列出的情况，就是这种情况。</p>
+
+<p>原因：一台主机上有多个Linux系统，会经常切换，那么这些系统使用同一ip，登录过一次后就会把ssh信息记录在本地的<code class="highlighter-rouge">~/.ssh/known_hsots</code>文件中，切换该系统后再用ssh访问这台主机就会出现冲突警告，需要手动删除修改known_hsots里面的内容。</p>
+
+<p>有以下两个解决方案：</p>
+
+<ol>
+  <li>
+    <p>手动删除修改known_hsots里面的内容；</p>
+  </li>
+  <li>
+    <p>修改配置文件<code class="highlighter-rouge">~/.ssh/config</code>，加上这两行，重启服务器。</p>
+  </li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+</code></pre>
+</div>
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                                <h5>Tags:</h5>
+                                
+                                    <button class="btn btn-white btn-xs" type="button">ssh</button>
+                                
+                                    <button class="btn btn-white btn-xs" type="button">key</button>
+                                
+                        </div>
+                        <div class="col-md-6">
+                            <div class="small text-right">
+                                <h5>Stats:</h5>
+                                <div> <i class="fa fa-comments-o"> </i> <span id = "url::http://www.jack003.com/linux/2015/02/02/ssh-key.html" class = "cy_cmt_count" ></span> comments</div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- donate -->
+                            
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+    Donate
+</button>
+<div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated flipInY">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Donate Me</h4>
+                <small class="font-bold">Thanks for your support!</small>
+            </div>
+            <div class="modal-body">
+                <div class="tabbable" id="tabs-960227">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#panel-405278" data-toggle="tab">Alipay</a>
+                        </li>
+                        <li>
+                            <a href="#panel-874705" data-toggle="tab">Wechat</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="panel-405278">
+                            <div class="text-center">
+                                <img src="/static/img/pay/alipay.png"" height="250" width="250">
+                            </div>    
+                        </div>
+                        <div class="tab-pane" id="panel-874705">
+                            <div class="text-center">
+                                <img src="/static/img/pay/wechat.png"" height="250" width="250">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                            
+                            <br>
+                            <!-- share -->
+                            
+                                <h2>Share:</h2>
+
+<div class="bshare-custom">
+	<a title="分享到微信" class="bshare-weixin"></a>
+	<a title="分享到QQ空间" class="bshare-qzone"></a>
+	<a title="分享到新浪微博" class="bshare-sinaminiblog"></a>
+	<a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>
+</div>
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=513f778e-a8f7-4c20-9ec2-d29cc2328d75&amp;pophcol=1&amp;lang=zh"></script>
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+                            
+                            <br>
+                            <!-- comment -->
+                            
+                                <h2>Comments:</h2>
+
+<!--高速版-->
+<div id="SOHUCS"></div>
+<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: 'cysfY7ULn',
+        conf: 'prod_861928934cecb7a18e15bedaed9dae29'
+    });
+</script>     
+
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+	
+	    
+<script id="cy_cmt_num" src="http://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cysfY7ULn"></script>
+<script>
+
+    $(document).ready(function () {
+
+        $('body').scrollspy({
+            target: '.navbar-fixed-top',
+            offset: 80
+        });
+
+        // Page scrolling feature
+        $('a.page-scroll').bind('click', function(event) {
+            var link = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $(link.attr('href')).offset().top - 50
+            }, 500);
+            event.preventDefault();
+            $("#navbar").collapse('hide');
+        });
+    });
+
+    var cbpAnimatedHeader = (function() {
+        var docElem = document.documentElement,
+                header = document.querySelector( '.navbar-default' ),
+                didScroll = false,
+                changeHeaderOn = 200;
+        function init() {
+            window.addEventListener( 'scroll', function( event ) {
+                if( !didScroll ) {
+                    didScroll = true;
+                    setTimeout( scrollPage, 250 );
+                }
+            }, false );
+        }
+        function scrollPage() {
+            var sy = scrollY();
+            if ( sy >= changeHeaderOn ) {
+                $(header).addClass('navbar-scroll')
+            }
+            else {
+                $(header).removeClass('navbar-scroll')
+            }
+            didScroll = false;
+        }
+        function scrollY() {
+            return window.pageYOffset || docElem.scrollTop;
+        }
+        init();
+
+    })();
+
+    // Activate WOW.js plugin for animation on scrol
+    new WOW().init();
+
+</script>
+
+	
+
+</body>
+
+</html>
