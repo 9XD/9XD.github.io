@@ -30,7 +30,7 @@ project:
   meetup:
     name: 'Meet Up'
     url: '/blog/meetup'
-    img: 'static/img/landing/9x_meetup.jpg'
+    img: 'static/img/landing/9xd_meetup.jpg'
   blog:
     name: 'Blog'
     url: '/blog/'
