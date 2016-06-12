@@ -20,7 +20,6 @@ permalink: /
                         <li><a class="page-scroll" href="#page-top"><span data-i18n="nav.home">{{ site.landing.home }}</span></a></li>
                         <li><a class="page-scroll" href="#about_me"><span data-i18n="nav.about_me">{{ site.landing.about }}</span></a></li>
                         <li><a class="page-scroll" href="#meetup"><span data-i18n="nav.meetup">{{ site.landing.meetup }}</span></a></li>
-                        <li><a class="page-scroll" href="#skills"><span data-i18n="nav.skills">{{ site.landing.skills }}</span></a></li>
                         <li><a class="page-scroll" href="#project"><span data-i18n="nav.projects">{{ site.landing.projects }}</span></a></li>
                         <li><a class="page-scroll" href="#blog"><span data-i18n="nav.blog">{{ site.landing.blog }}</span></a></li>
                         <li><a class="page-scroll" href="#contact"><span data-i18n="nav.contact">{{ site.landing.contact }}</span></a></li>
@@ -200,81 +199,25 @@ permalink: /
         <div class="row">
             <div class="col-sm-4 wow fadeInLeft">
                 <div class="team-member">
-                    <img src="{{ site.project.saplatform.img | prepend: site.baseurl }}" class="img-responsive img-circle img-small" alt="">
-                    <h4><span class="navy">{{ site.project.saplatform.name }}</span></h4>
-                    <p><span data-i18n="projects.saplatform">Saplatform is a automated service for operations, it has asset management, project release, database access function, it can control mass servers.</span></p>
-                    <ul class="list-inline">
-                        <li>
-                            <a class="github-button" href="{{ site.project.saplatform.url | prepend: 'https://github.com'}}"
-                            data-icon="octicon-star"
-                            data-count-href="{{ site.project.saplatform.url | append: '/stargazers' }}"
-                            data-count-api="{{ site.project.saplatform.url | prepend: '/repos' | append: '#stargazers_count' }}"
-                            data-count-aria-label="# stargazers on GitHub"
-                            aria-label="Star hydepress/jekyll-install on GitHub">Star</a>
-                        </li>
-                        <li>
-                            <a class="github-button" href="{{ site.project.saplatform.url | prepend: 'https://github.com'}}"
-                            data-icon="octicon-fork"
-                            data-count-href="{{ site.project.saplatform.url | append: '/forks' }}"
-                            data-count-api="{{ site.project.saplatform.url | prepend: '/repos' | append: '#forks_count' }}"
-                            data-count-aria-label="# forks on GitHub"
-                            aria-label="Star hydepress/jekyll-install on GitHub">Fork</a>
-                        </li>
-
-                    </ul>
+                    <img src="{{ site.project.meetup.img | prepend: site.baseurl }}" class="img-responsive img-circle img-small" alt="">
+                    <h4><span class="navy">{{ site.project.meetup.name }}</span></h4>
+                    <p><span data-i18n="projects.meetup">개발자 모임을 주최하여, 또래 개발자간의 네트워킹을 위해 노력하고 있습니다.</span></p>
                 </div>
             </div>
 
             <div class="col-sm-4 wow">
                 <div class="team-member">
-                    <img src="{{ site.project.jalpc.img | prepend: site.baseurl }}" class="img-responsive img-circle img-small" alt="">
-                    <h4><span class="navy">{{ site.project.jalpc.name }}</span></h4>
-                    <p><span data-i18n="projects.jalpc">Jalpc is a simple, beautiful and swift theme for Jekyll. It's pretty minimal, but leverages large type and drastic contrast to make a statement, on all devices.</span></p>
-                    <ul class="list-inline">
-                        <li>
-                            <a class="github-button" href="{{ site.project.jalpc.url | prepend: 'https://github.com'}}"
-                            data-icon="octicon-star"
-                            data-count-href="{{ site.project.jalpc.url | append: '/stargazers' }}"
-                            data-count-api="{{ site.project.jalpc.url | prepend: '/repos' | append: '#stargazers_count' }}"
-                            data-count-aria-label="# stargazers on GitHub"
-                            aria-label="Star hydepress/jekyll-install on GitHub">Star</a>
-                        </li>
-                        <li>
-                            <a class="github-button" href="{{ site.project.jalpc.url | prepend: 'https://github.com'}}"
-                            data-icon="octicon-fork"
-                            data-count-href="{{ site.project.jalpc.url | append: '/forks' }}"
-                            data-count-api="{{ site.project.jalpc.url | prepend: '/repos' | append: '#forks_count' }}"
-                            data-count-aria-label="# forks on GitHub"
-                            aria-label="Star hydepress/jekyll-install on GitHub">Fork</a>
-                        </li>
-                    </ul>
+                    <img src="{{ site.project.blog.img | prepend: site.baseurl }}" class="img-responsive img-circle img-small" alt="">
+                    <h4><span class="navy">{{ site.project.blog.name }}</span></h4>
+                    <p><span data-i18n="projects.blog">9XD의 새로운 소식들, 그리고 기록들을 남기기 위해 블로그를 운영합니다.</span></p>
                 </div>
             </div>
 
             <div class="col-sm-4 wow fadeInRight">
                 <div class="team-member">
-                    <img src="{{ site.project.raspberry.img | prepend: site.baseurl }}" class="img-responsive img-circle img-small" alt="">
-                    <h4><span class="navy">{{ site.project.raspberry.name }}</span></h4>
-                    <p><span data-i18n="projects.raspberry">I use Raspberry Pi to realize Smart Home, it can be a home NAS, a web server, a auto downloader, it can report the weather and can monitor the home.</span></p>
-                    <ul class="list-inline">
-                        <li>
-                            <a class="github-button" href="{{ site.project.raspberry.url | prepend: 'https://github.com'}}"
-                            data-icon="octicon-star"
-                            data-count-href="{{ site.project.raspberry.url | append: '/stargazers' }}"
-                            data-count-api="{{ site.project.raspberry.url | prepend: '/repos' | append: '#stargazers_count' }}"
-                            data-count-aria-label="# stargazers on GitHub"
-                            aria-label="Star hydepress/jekyll-install on GitHub">Star</a>
-                        </li>
-                        <li>
-                            <a class="github-button" href="{{ site.project.raspberry.url | prepend: 'https://github.com'}}"
-                            data-icon="octicon-fork"
-                            data-count-href="{{ site.project.raspberry.url | append: '/forks' }}"
-                            data-count-api="{{ site.project.raspberry.url | prepend: '/repos' | append: '#forks_count' }}"
-                            data-count-aria-label="# forks on GitHub"
-                            aria-label="Star hydepress/jekyll-install on GitHub">Fork</a>
-                        </li>
-
-                    </ul>
+                    <img src="{{ site.project.undefined.img | prepend: site.baseurl }}" class="img-responsive img-circle img-small" alt="">
+                    <h4><span class="navy">{{ site.project.undefined.name }}</span></h4>
+                    <p><span data-i18n="projects.undefined">아직은 미지의 세계인, 9XD의 미래를 위해 많은 음모를 꾸미고 있습니다. 할당해주세요ㅅㅅㅅ!</span></p>
                 </div>
             </div>
         </div>
@@ -301,7 +244,7 @@ permalink: /
         <div class="row m-b-lg">
             <div class="col-lg-12 text-center">
                 <div class="navy-line"></div>
-                <h1><span data-i18n="contact.contact_me">Contact Me</span></h1>
+                <h1><span data-i18n="contact.contact_us">Contact Us</span></h1>
             </div>
         </div>
         <div class="row">
@@ -311,8 +254,6 @@ permalink: /
                     Or through the following ways
                 </span></p>
                 <ul class="list-inline social-icon">
-                    <li><a href="https://github.com/{{ site.author.github_username }}" target="blank"><i class="fa fa-github"></i></a>
-                    </li>
                     <li><a href="https://www.facebook.com/{{ site.author.facebook_username }}" target="blank"><i class="fa fa-facebook"></i></a>
                     </li>
                     <li><a href="{{ site.url}}/feed.xml" target="blank"><i class="fa fa-rss"></i></a>
@@ -324,7 +265,7 @@ permalink: /
         </div>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
-                <p><strong>&copy; 2015 {{ site.title }}</strong></p>
+                <p><strong>&copy; 2016 {{ site.title }}</strong></p>
             </div>
         </div>
     </div>

@@ -27,18 +27,18 @@ landing:
 
 # my projects
 project:
-  saplatform: 
-    name: 'Saplatform'
-    url: '/Jack614/saplatform'
-    img: 'static/img/landing/saplatform.jpg'
-  jalpc: 
-    name: 'Jalpc'
-    url: '/Jack614/jalpc_jekyll_theme'
-    img: 'static/img/landing/jekyll.jpg'
-  raspberry: 
-    name: 'My Raspberry'
-    url: '/Jack614/my_raspberry_pi'
-    img: 'static/img/landing/raspberry.jpg'
+  meetup:
+    name: 'Meet Up'
+    url: '/blog/meetup'
+    img: 'static/img/landing/9x_meetup.jpg'
+  blog:
+    name: 'Blog'
+    url: '/blog/'
+    img: 'static/img/landing/post.jpg'
+  undefined:
+    name: 'Undefined'
+    url: '/'
+    img: 'static/img/landing/question_mark.png'
 
 # blog index
 index:
@@ -62,7 +62,7 @@ changyan:
 
 # google analytics
 ga:
-  id: UA-73784599-1
+  id: UA-79196391-1
 
 # blog img path
 img_path: '/static/img/blog'
