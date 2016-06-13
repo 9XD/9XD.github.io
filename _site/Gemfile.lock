@@ -122,8 +122,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  github-pages
+  github-pages (= 82)
   jekyll
+  json
   kramdown
 
 BUNDLED WITH
