@@ -20,7 +20,7 @@
                 <div class="navbar-header page-scroll">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar">ttt</span>
+                        <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
@@ -30,47 +30,19 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a class="page-scroll" href="/blog/">{{ site.index.home }}</a></li>
 
-                        {% if page.title == site.index.python %}
+                        {% if page.title == site.index.meetup %}
                             <li class="active">
                         {% else %}
                             <li>
                         {% endif %}
-                            <a class="page-scroll" href="/python/">{{ site.index.python }}</a></li>
+                            <a class="page-scroll" href="/meetup/">{{ site.index.meetup }}</a></li>
 
-                        {% if page.title == site.index.linux %}
+                        {% if page.title == site.index.interview %}
                             <li class="active">
                         {% else %}
                             <li>
                         {% endif %}
-                            <a class="page-scroll" href="/linux/">{{ site.index.linux }}</a></li>
-
-                        {% if page.title == site.index.html %}
-                            <li class="active">
-                        {% else %}
-                            <li>
-                        {% endif %}
-                            <a class="page-scroll" href="/html/">{{ site.index.html }}</a></li>
-
-                        {% if page.title == site.index.database %}
-                            <li class="active">
-                        {% else %}
-                            <li>
-                        {% endif %}
-                            <a class="page-scroll" href="/database/">{{ site.index.database }}</a></li>
-
-                        {% if page.title == site.index.mac %}
-                            <li class="active">
-                        {% else %}
-                            <li>
-                        {% endif %}
-                            <a class="page-scroll" href="/mac/">{{ site.index.mac }}</a></li>
-
-                        {% if page.title == site.index.life %}
-                            <li class="active">
-                        {% else %}
-                            <li>
-                        {% endif %}
-                            <a class="page-scroll" href="/life/">{{ site.index.life }}</a></li>
+                            <a class="page-scroll" href="/interview/">{{ site.index.interview }}</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,11 +1,7 @@
 <h2>Comments:</h2>
-
-<!--高速版-->
-<div id="SOHUCS"></div>
-<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
-<script type="text/javascript">
-    window.changyan.api.config({
-        appid: '{{ site.changyan.appid }}',
-        conf: '{{ site.changyan.conf }}'
-    });
-</script>     
+<div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+    this.page.url = "http://9xd.github.io";
+    this.page.identifier = window.location.href.toString().split(window.location.host)[1];
+};(function() { var d = document, s = d.createElement('script'); s.src = '//9xd.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })(); </script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>

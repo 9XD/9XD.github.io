@@ -5,9 +5,75 @@
     <description></description>
     <link>http://9XD.github.io//</link>
     <atom:link href="http://9XD.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 12 Jun 2016 23:50:27 +0900</pubDate>
-    <lastBuildDate>Sun, 12 Jun 2016 23:50:27 +0900</lastBuildDate>
+    <pubDate>Tue, 14 Jun 2016 01:57:10 +0900</pubDate>
+    <lastBuildDate>Tue, 14 Jun 2016 01:57:10 +0900</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>9XD 포스트 테스트입니다.</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;공지&lt;/h2&gt;
+&lt;p&gt;장소는 강남역 2번출구 메리츠타워 16층 D2 Startup Factory입니다.
+7:00~7:30 사이에 등록이니 그 사이에 오셔서
+프레시코드의 샐러드 &amp;amp; 커피라디오의 아이스커피, 그리고 참가기념품을 받아 착석해주시면 됩니다.
+(늦게 오시면 수량이 부족할 수 있는 점을 양해해주시기 바랍니다)&lt;/p&gt;
+
+&lt;p&gt;그리고 모임이 종료된 9:30에는 뒷풀이 장소로 이동할 예정인데,
+참석하시는 분들은 현금 10,000원을 준비해주시기 바랍니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;모임 설명&lt;/h3&gt;
+&lt;p&gt;이제 갓 회사에 입사한 신입, 이게 내 길이 맞나 고민 중인 컴공과 학생, 혹은 이미 현업에서 열심히 달리고 있는 개발자. 험난한 IT 업계에서 9x년생들이 살아남는 이야기를 공유합시다. 나와 같은 직군인 또래의 이야기를 듣고, 새로운 영감과 자극을 받았으면 합니다. 또한 IT업계에서 중요한 ‘커뮤니티 활동’에 한 발자욱 더 다가가는 계기가 되었으면 합니다.
+네트워킹 시간을 위해 자신을 소개할 수 있는 어떤것(명함, 포트폴리오 등)을 준비해오세요!&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;발표자 지원&lt;/h3&gt;
+&lt;p&gt;발표자에게는 5분~10분동안 발표할 자리가 주어집니다. 회사 생활, 현재 하는 고민 등 ‘9x년생 개발자’와 관련있는 주제라면 무엇이든 좋으니 jayjinjay@gmail.com으로 자유롭게 문의 바랍니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;장소&lt;/h3&gt;
+&lt;p&gt;강남역 2번출구 메리츠타워 16층 D2 Startup Factory&lt;/p&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;후원&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Naver D2 / 참가기념품, 장소&lt;/li&gt;
+  &lt;li&gt;이상한모임 / 출퇴근 머그컵, 월간이모 교환권&lt;/li&gt;
+  &lt;li&gt;캡슐코퍼레이션 / 굿즈&lt;/li&gt;
+  &lt;li&gt;사이냅소프트 / 자금&lt;/li&gt;
+  &lt;li&gt;지앤선 / 개발 도서&lt;/li&gt;
+  &lt;li&gt;배달의민족 / 배달의민족 굿즈&lt;/li&gt;
+  &lt;li&gt;커피라디오(메모지닷컴) / 커피&lt;/li&gt;
+  &lt;li&gt;프레시코드 / 샐러드 도시락&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;###주최
+9X년생 개발자 모임&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;페이스북
+그룹&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;모임 소개
+슬라이드&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;###1회 모임
+모임: http://onoffmix.com/event/60046
+사진: https://goo.gl/photos/TrobCJEfzJrvTN1d9&lt;/p&gt;
+
+&lt;p&gt;###2회 모임
+모임: http://onoffmix.com/event/65373
+사진: https://goo.gl/photos/MxWSVxAiUfmv5c1M7&lt;/p&gt;
+</description>
+        <pubDate>Tue, 14 Jun 2016 00:00:00 +0900</pubDate>
+        <link>http://9XD.github.io//meetup/2016/06/14/9XD-TESTTEST.html</link>
+        <guid isPermaLink="true">http://9XD.github.io//meetup/2016/06/14/9XD-TESTTEST.html</guid>
+        
+        <category>blog</category>
+        
+        
+        <category>meetup</category>
+        
+      </item>
     
   </channel>
 </rss>

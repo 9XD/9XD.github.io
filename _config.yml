@@ -11,7 +11,6 @@ url: "http://9XD.github.io"
 author:
   last_name: '9X년생'
   first_name: '개발자 모임'
-
   email: 'jayjinjay@gmail.com'
   facebook_username: 'groups/1565641083693087'
   head_img: 'static/img/landing/9xd.png'
@@ -43,22 +42,16 @@ project:
 # blog index
 index:
   home: 'Home'
-  python: 'Python'
-  linux: 'Linux'
-  html: 'HTML'
-  database: 'Database'
-  mac: 'Mac'
-  life: 'Life'
+  meetup: 'Meet Up'
+  interview: 'Interview'
 
-# donate
-donate:
-  wechat: 'static/img/pay/wechat.png'
-  alipay: 'static/img/pay/alipay.png'
+# facebook share
+facebook:
 
-# comment
-changyan:
-  appid: cysfY7ULn
-  conf: prod_861928934cecb7a18e15bedaed9dae29
+
+# disqus comment
+disuqus:
+
 
 # google analytics
 ga:
