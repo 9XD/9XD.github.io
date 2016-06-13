@@ -5,8 +5,8 @@
     <description></description>
     <link>http://9XD.github.io//</link>
     <atom:link href="http://9XD.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 14 Jun 2016 01:57:10 +0900</pubDate>
-    <lastBuildDate>Tue, 14 Jun 2016 01:57:10 +0900</lastBuildDate>
+    <pubDate>Tue, 14 Jun 2016 01:59:26 +0900</pubDate>
+    <lastBuildDate>Tue, 14 Jun 2016 01:59:26 +0900</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -42,8 +42,8 @@
   &lt;li&gt;프레시코드 / 샐러드 도시락&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;###주최
-9X년생 개발자 모임&lt;/p&gt;
+&lt;h3 id=&quot;section-5&quot;&gt;주최&lt;/h3&gt;
+&lt;p&gt;9X년생 개발자 모임&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -56,12 +56,12 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;###1회 모임
-모임: http://onoffmix.com/event/60046
+&lt;h3 id=&quot;section-6&quot;&gt;1회 모임&lt;/h3&gt;
+&lt;p&gt;모임: http://onoffmix.com/event/60046
 사진: https://goo.gl/photos/TrobCJEfzJrvTN1d9&lt;/p&gt;
 
-&lt;p&gt;###2회 모임
-모임: http://onoffmix.com/event/65373
+&lt;h3 id=&quot;section-7&quot;&gt;2회 모임&lt;/h3&gt;
+&lt;p&gt;모임: http://onoffmix.com/event/65373
 사진: https://goo.gl/photos/MxWSVxAiUfmv5c1M7&lt;/p&gt;
 </description>
         <pubDate>Tue, 14 Jun 2016 00:00:00 +0900</pubDate>

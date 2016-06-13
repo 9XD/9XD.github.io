@@ -43,7 +43,7 @@ tags: [blog]
 
 
 
-###주최
+### 주최
 9X년생 개발자 모임
 
 - 페이스북
@@ -54,10 +54,10 @@ tags: [blog]
 슬라이드
 
 
-###1회 모임
+### 1회 모임
 모임: http://onoffmix.com/event/60046
 사진: https://goo.gl/photos/TrobCJEfzJrvTN1d9
 
-###2회 모임
+### 2회 모임
 모임: http://onoffmix.com/event/65373
 사진: https://goo.gl/photos/MxWSVxAiUfmv5c1M7
