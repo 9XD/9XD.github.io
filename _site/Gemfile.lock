@@ -122,10 +122,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  coffee-script
   github-pages (= 82)
   jekyll
+  jekyll-feed
+  jekyll-sass-converter
+  jekyll-sitemap
   json
   kramdown
+  listen
+  rouge
 
 BUNDLED WITH
    1.12.5
