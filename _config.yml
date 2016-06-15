@@ -50,7 +50,7 @@ facebook:
 
 
 # disqus comment
-disuqus:
+disqus: True
 
 
 # google analytics
