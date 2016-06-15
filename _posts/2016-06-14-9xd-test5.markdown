@@ -4,6 +4,7 @@ title: 9XD 포스트 테스트입니다.
 desc: "9xd testetstestestestsetestest"
 keywords: "jekyll,blog,first,test,9xd,meetup"
 date: 2016-06-14
+author: "Jelly"
 categories: [meetup]
 tags: [blog]
 ---
