@@ -1,6 +1,6 @@
-@import url("http://fonts.useso.com/css?family=Open+Sans:300,400,600,700");
-@import url("http://fonts.useso.com/css?family=Roboto:400,300,500,700");
-/*
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
  *
  *   INSPINIA - Responsive Admin Theme
  *   version 2.4
@@ -7801,7 +7801,7 @@ body.skin-3 {
   background: transparent;
 }
 body.md-skin {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #ffffff;
 }
 .md-skin .nav-header {
@@ -7809,7 +7809,7 @@ body.md-skin {
 }
 .md-skin .label,
 .md-skin .badge {
-  font-family: 'Roboto';
+  font-family: 'Montserrat';
 }
 .md-skin .font-bold {
   font-weight: 500;
@@ -7864,10 +7864,10 @@ body.md-skin {
 }
 .md-skin #nestable-output,
 .md-skin #nestable2-output {
-  font-family: 'Roboto', lucida grande, lucida sans unicode, helvetica, arial, sans-serif;
+  font-family: 'Montserrat', lucida grande, lucida sans unicode, helvetica, arial, sans-serif;
 }
 .md-skin .landing-page {
-  font-family: 'Roboto', helvetica, arial, sans-serif;
+  font-family: 'Montserrat', helvetica, arial, sans-serif;
 }
 .md-skin .landing-page.navbar-default.navbar-scroll {
   background-color: #fff !important;
@@ -7877,7 +7877,7 @@ body.md-skin {
   box-shadow: none;
 }
 .md-skin .landing-page.navbar-default .nav li a {
-  font-family: 'Roboto', helvetica, arial, sans-serif;
+  font-family: 'Montserrat', helvetica, arial, sans-serif;
 }
 .md-skin .nav > li > a {
   color: #676a6c;
@@ -8045,7 +8045,7 @@ body.md-skin {
   padding: 20px 10px;
 }
 .md-skin.landing-page .navbar-default .nav li a {
-  font-family: 'Roboto', helvetica, arial, sans-serif;
+  font-family: 'Montserrat', helvetica, arial, sans-serif;
 }
 .md-skin.landing-page .nav > li > a {
   padding: 25px 10px 15px 10px;
