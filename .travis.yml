@@ -3,11 +3,13 @@ rvm:
   - 2.2
   - 2.1
 
+install:
+ - bundle install
+
 before_script:
  - chmod +x ./script/cibuild # 또는 로컬에서 직접 실행 후 커밋
 
 # bundler 를 사용한다고 가정함. 따라서
-# `install` 단계에 `bundle install` 이 디폴트로 실행됨.
 script: ./script/cibuild
 
 # 브랜치 화이트리스트. GitHub Pages 에서만 사용됨
