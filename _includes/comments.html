@@ -7,8 +7,8 @@
      */
 
      var disqus_config = function () {
-     this.page.url = "http://9xd.github.io" + window.location.href.toString().split(window.location.host)[1];  // Replace PAGE_URL with your page's canonical URL variable
-     this.page.identifier = "http://9xd.github.io" + window.location.href.toString().split(window.location.host)[1]; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+     this.page.url = window.location.href.split('?')[0];  // Replace PAGE_URL with your page's canonical URL variable
+     this.page.identifier = window.location.href.split('?')[0]; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
      };
 
     (function() {  // DON'T EDIT BELOW THIS LINE
@@ -22,4 +22,3 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
-<script id="dsq-count-scr" src="//9xd.disqus.com/count.js" async></script>
