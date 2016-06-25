@@ -6,11 +6,8 @@ rvm:
 install:
  - bundle install
 
-before_script:
- - chmod +x ./script/cibuild # 또는 로컬에서 직접 실행 후 커밋
 
-# bundler 를 사용한다고 가정함. 따라서
-script: ./script/cibuild
+script: jekyll build
 
 # 브랜치 화이트리스트. GitHub Pages 에서만 사용됨
 branches:
