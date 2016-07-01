@@ -1,3 +1,8 @@
+@primary: #65cca6;
+
+@font-primary: #676a6c;
+
+
 @color_1: #a7b1c2;
 @color_2: #999c9e;
 @color_3: #ffffff;
@@ -5,7 +10,6 @@
 @color_5: inherit;
 @color_6: #DFE4ED;
 @color_7: #8095a8;
-@primary: #375370;
 @color_9: #1cc09f;
 @color_10: #676a6c;
 @color_11: #fff;
@@ -80,98 +84,33 @@
 
 @import "https://fonts.googleapis.com/css?family=Open+Sans";
 @import "https://fonts.googleapis.com/css?family=Montserrat";
-/* TOOGLE SWICH */
-/* CHOSEN PLUGIN */
-/* PAGINATIN */
-/* TOOLTIPS */
-/* EASY PIE CHART*/
-/* FULLCALENDAR */
-/* Chat */
-/* LIST GROUP */
-/* FLOT CHART  */
-/* DATATABLES */
-/* CIRCLE */
-/* ANIMATION */
-/* PEACE */
-/* WIDGETS */
-/* INPUTS */
-/* UI Sortable */
-/* SWITCHES */
-/* jqGrid */
-/* Nestable list */
-/**
-* Nestable Extras
+
+/*
+9XD에서 추가한 스타일시트
 */
-/* CodeMirror */
-/* Google Maps */
-/* Validation */
-/* ngGrid */
-/* Toastr custom style */
-/* Notifie */
-/* Image cropper style */
-/* Forum styles  */
-/* New Timeline style */
-/* Tabs */
-/* jsvectormap */
-/*Slick Carousel */
-/* Payments */
-/* Select2 custom styles */
-/* Tour */
-/* Resizable */
-/* Wizard step fix */
-/* GALLERY */
-/* Summernote text editor  */
-/* MODAL */
-/* WRAPPERS */
-/* FOOTER */
-/* PANELS */
-/* TABLES */
-/* PANELS */
-/* GLOBAL  */
-/* BACKGROUNDS */
-/* COLORS */
-/* For handle diferent bg color in AngularJS version */
-/* For handle diferent bg color in MVC version */
-/* FULL HEIGHT */
-/* MARGINS & PADDINGS */
-/* Show profile dropdown on fixed sidebar */
-/* SEARCH PAGE */
-/* CONTACTS */
-/* INVOICE */
-/* ERROR & LOGIN & LOCKSCREEN*/
-/* DASBOARD */
-/* Intimeline */
-/* PIN BOARD */
-/* FILE MANAGER */
-/* PROFILE */
-/* MAILBOX */
-/* PROJECTS */
-/* FAQ */
-/* Chat view */
-/* jsTree */
-/* CLIENTS */
-/* BLOG ARTICLE */
-/* ISSUE TRACKER */
-/* TEAMS */
-/* AGILE BOARD */
-/* DIFF */
-/* E-commerce */
-/* Social feed */
-/* Vote list */
-/*
- * metismenu - v2.0.2
- * A jQuery menu plugin
- * https://github.com/onokumus/metisMenu
- *
- * Made by Osman Nuri Okumus
- * Under MIT License
- */
-/*
- *  Usage:
- *
- *    <div class="sk-spinner sk-spinner-rotating-plane"></div>
- *
- */
+
+//공통
+@transition: all 0.4s ease;
+a {
+	color: @primary;
+	transition: @transition;
+	&:hover {
+		color: darken(@primary, 20%);
+		transition: @transition;
+	}
+}
+
+//첫 페이지
+section#about {
+	p {
+		color: @font-primary;
+		font-size: 2rem;
+	}
+}
+
+
+
+
 @-webkit-keyframes "sk-rotatePlane" {
 	0% {
 		-webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
@@ -8621,7 +8560,7 @@ body.landing-page {
 	}
 	.gray-section {
 		background: #f4f4f4;
-		margin-top: 60px;
+		//margin-top: 60px;
 	}
 	.team-member {
 		text-align: center;
