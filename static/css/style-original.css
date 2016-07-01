@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+ *
+ *   INSPINIA - Responsive Admin Theme
+ *   version 2.4
+ *
+*/
 h1,
 h2,
 h3,
@@ -3141,7 +3147,7 @@ body.tour-open .animated {
   min-width: 150px;
 }
 .resizable-panels .ibox .ibox-content {
-  height: calc(51%);
+  height: calc(100% - 49px);
 }
 .ui-resizable-helper {
   background: rgba(211, 211, 211, 0.4);
@@ -4031,12 +4037,12 @@ a.close-canvas-menu:hover {
   height: 100%;
 }
 .fh-breadcrumb {
-  height: calc(-96%);
+  height: calc(100% - 196px);
   margin: 0 -15px;
   position: relative;
 }
 .fh-no-breadcrumb {
-  height: calc(1%);
+  height: calc(100% - 99px);
   margin: 0 -15px;
   position: relative;
 }
@@ -4329,7 +4335,7 @@ body.fullscreen-ibox-mode {
   display: none;
 }
 .ibox.fullscreen .ibox-content {
-  min-height: calc(52%);
+  min-height: calc(100% - 48px);
 }
 body.modal-open {
   padding-right: inherit !important;
@@ -6703,19 +6709,10 @@ body.landing-page {
   width: 100%;
 }
 .landing-page .header-back.one {
-  background: url('../img/landing/banner1.png') 50% 0 no-repeat;
+  background: url('../img/landing/9xd_cover.jpg') 50% 0 no-repeat;
 }
 .landing-page .header-back.two {
-  background: url('../img/landing/banner2.png') 50% 0 no-repeat;
-}
-.landing-page .header-back.three {
-  background: url('../img/landing/banner3.png') 50% 0 no-repeat;
-}
-.landing-page .header-back.four {
-  background: url('../img/landing/banner4.png') 50% 0 no-repeat;
-}
-.landing-page .header-back.five {
-  background: url('../img/landing/banner5.png') 50% 0 no-repeat;
+  background: url('../img/landing/header_two.jpg') 50% 0 no-repeat;
 }
 .landing-page .carousel {
   height: 470px;
