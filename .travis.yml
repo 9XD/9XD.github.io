@@ -1,0 +1,21 @@
+language: ruby
+rvm:
+  - 2.2
+  - 2.1
+
+install:
+ - bundle install
+
+
+script: jekyll build
+
+# 브랜치 화이트리스트. GitHub Pages 에서만 사용됨
+branches:
+  only:
+  - master
+  - gh-pages     # gh-pages 브랜치를 테스트 함
+  - /pages-(.*)/ # "pages-" 로 시작하는 모든 브랜치를 테스트 함
+
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # html-proofer 의 설치 속도를 높여줌
