@@ -3,7 +3,7 @@ layout: blog
 title: index
 permalink: /
 ---
-<div class="navbar-wrapper">
+<div class="navbar-wrapper" xmlns="http://www.w3.org/1999/html">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header page-scroll">
@@ -18,7 +18,6 @@ permalink: /
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right" id="i18_navbar">
                         <li><a class="page-scroll" href="#page-top"><span data-i18n="nav.home">{{ site.landing.home }}</span></a></li>
-                        <li><a class="page-scroll" href="#about_us"><span data-i18n="nav.about_me">{{ site.landing.about }}</span></a></li>
                         <li><a class="page-scroll" href="#meetup"><span data-i18n="nav.meetup">{{ site.landing.meetup }}</span></a></li>
                         <li><a class="page-scroll" href="#project"><span data-i18n="nav.projects">{{ site.landing.projects }}</span></a></li>
                         <li><a class="page-scroll" href="#blog"><span data-i18n="nav.blog">{{ site.landing.blog }}</span></a></li>
@@ -33,6 +32,9 @@ permalink: /
     <ol class="carousel-indicators">
         <li data-target="#inSlider" data-slide-to="0" class="active"></li>
         <li data-target="#inSlider" data-slide-to="1"></li>
+        <li data-target="#inSlider" data-slide-to="2"></li>
+        <li data-target="#inSlider" data-slide-to="3"></li>
+        <li data-target="#inSlider" data-slide-to="4"></li>
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="item active">
@@ -54,6 +56,30 @@ permalink: /
             <!-- Set background for slide in css -->
             <div class="header-back two"></div>
         </div>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back three"></div>
+        </div>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back four"></div>
+        </div>
+        <div class="item">
+            <div class="container">
+                <div class="carousel-caption blank">
+                </div>
+            </div>
+            <!-- Set background for slide in css -->
+            <div class="header-back five"></div>
+        </div>
     </div>
     <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -65,65 +91,15 @@ permalink: /
     </a>
 </div>
 
-<section id="about_us" class="features">
-    <div class="container" id="i18_about_us">
-        <div class="row m-b-lg">
-            <div class="col-lg-12 text-center">
-                <div class="navy-line"></div>
-                <h1><span data-i18n="about_us.about_us">About Us</span></h1>
-            </div>
-        </div>
-        <div class="row">
-            <!-- python -->
-            <div class="col-sm-2 wow fadeInLeft">
-                <div class="team-member">
-                    <div class="vote-icon">
-                        <i class="icon-python"> </i>
-                    </div>
-                </div>
-            </div>
-            <!-- linux -->
-            <div class="col-sm-2 wow fadeInLeft">
-                <div class="team-member">            
-                    <div class="vote-icon">
-                        <i class="fa fa-linux"> </i>
-                    </div>
-                </div>
-            </div>
-            <!-- avatar -->
-            <div class="col-sm-4">
-                <div class="team-member wow zoomIn">
-                    <img src="{{ site.author.head_img | prepend: site.baseurl }}" height="110" width="110" class="img-responsive img-circle" alt="">
-                    <h4><span class="navy">{{ site.author.last_name }}</span> {{ site.author.first_name }}</h4>
-                </div>
-            </div>
-            <!-- html -->
-            <div class="col-sm-2 wow fadeInRight">
-                <div class="team-member">
-                    <div class="vote-icon">
-                        <i class="icon-html"> </i>
-                    </div>
-                </div>
-            </div>
-            <!-- docker -->
-            <div class="col-sm-2 wow fadeInRight">
-                <div class="team-member">            
-                    <div class="vote-icon">
-                        <i class="icon-docker"> </i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
-                <p><span data-i18n="about_us.des">
-                    이제 갓 회사에 입사한 신입, 이게 내 길이 맞나 고민 중인 컴공과 학생, 혹은 이미 현업에서 열심히 달리고 있는 개발자. 험난한 IT 업계에서 9x년생들이 살아남는 이야기를 공유합시다. 나와 같은 직군인 또래의 이야기를 듣고, 새로운 영감과 자극을 받았으면 합니다. 또한 IT업계에서 중요한 ‘커뮤니티 활동’에 한 발자욱 더 다가가는 계기가 되었으면 합니다.
-                </span></p>
-            </div>
+<section id="about" class="features container-fluid">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
+            <p>커뮤니티 활동의 첫 단추,</p>
+            <p>또래 개발자를 만날 수 있는 이곳은</p>
+            <p><a href="https://www.facebook.com/groups/1565641083693087/">9X년생 개발자 모임</a>입니다.</p>
         </div>
     </div>
 </section>
-
 <section id="meetup" class="timeline features gray-section">
     <div class="container" id="i18_meetup">
         <div class="row">
