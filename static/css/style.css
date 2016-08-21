@@ -6298,8 +6298,22 @@ dd.project-people {
   font-size: 15px;
   line-height: 26px;
 }
+.article p > img {
+  max-width: 640px;
+}
 .article .ibox-content {
   padding: 40px;
+}
+.article .ibox-content > h1,
+.article .ibox-content > h2,
+.article .ibox-content > h3,
+.article .ibox-content > h4,
+.article .ibox-content > h5,
+.article .ibox-content > h6 {
+  margin-top: 20px;
+}
+.article .ibox-content > img {
+  max-width: 640px;
 }
 .article .social-feed-box {
   margin-bottom: 0;
@@ -6313,7 +6327,7 @@ dd.project-people {
   font-size: 13px;
   line-height: 18px;
 }
-.article img {
+.article > img {
   max-width: 640px;
 }
 .article-title {
