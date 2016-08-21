@@ -1,5 +1,6 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans";
 @import "https://fonts.googleapis.com/css?family=Montserrat";
+@import "http://fonts.googleapis.com/earlyaccess/notosanskr.css";
 /*
 9XD에서 추가한 스타일시트
 */
@@ -783,7 +784,7 @@ h6 {
   padding-left: 62px;
 }
 body {
-  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, 'Noto Sans KR', sans-serif;
   background-color: #2f4050;
   font-size: 13px;
   color: #676a6c;
@@ -2145,7 +2146,7 @@ button.btn-danger.dim:active {
 .label {
   background-color: #d1dade;
   color: #5e5e5e;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', 'Noto Sans KR';
   font-size: 10px;
   font-weight: 600;
   padding: 3px 8px;
@@ -2154,7 +2155,7 @@ button.btn-danger.dim:active {
 .badge {
   background-color: #d1dade;
   color: #5e5e5e;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', 'Noto Sans KR';
   font-size: 11px;
   font-weight: 600;
   padding-bottom: 4px;
@@ -2281,7 +2282,7 @@ button.btn-danger.dim:active {
   line-height: 16px;
   font-size: 10px;
   color: white;
-  font-family: Trebuchet, Arial, sans-serif;
+  font-family: Trebuchet, Arial, 'Noto Sans KR', sans-serif;
   font-weight: bold;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -2305,7 +2306,7 @@ button.btn-danger.dim:active {
   line-height: 16px;
   font-size: 10px;
   color: white;
-  font-family: Trebuchet, Arial, sans-serif;
+  font-family: Trebuchet, Arial, 'Noto Sans KR', sans-serif;
   font-weight: bold;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -3520,7 +3521,7 @@ div.dt-button-info {
   width: 100%;
   font-size: 0.75em;
   line-height: 1.333333em;
-  font-family: open sans, lucida grande, lucida sans unicode, helvetica, arial, sans-serif;
+  font-family: open sans, lucida grande, lucida sans unicode, helvetica, arial, 'Noto Sans KR', sans-serif;
   padding: 5px;
   font-size: 12px;
   padding: 25px;
@@ -3531,7 +3532,7 @@ div.dt-button-info {
   width: 100%;
   font-size: 0.75em;
   line-height: 1.333333em;
-  font-family: open sans, lucida grande, lucida sans unicode, helvetica, arial, sans-serif;
+  font-family: open sans, lucida grande, lucida sans unicode, helvetica, arial, 'Noto Sans KR', sans-serif;
   padding: 5px;
   font-size: 12px;
   padding: 25px;
@@ -4066,7 +4067,7 @@ a.forum-item-title:hover {
   border-radius: 3px;
   background: #292929;
   color: white;
-  font-family: sans-serif, Verdana;
+  font-family: sans-serif, Verdana, 'Noto Sans KR';
   font-size: smaller;
   padding: 5px;
 }
@@ -6312,6 +6313,9 @@ dd.project-people {
   font-size: 13px;
   line-height: 18px;
 }
+.article img {
+  max-width: 640px;
+}
 .article-title {
   text-align: center;
   margin: 40px 0 100px 0;
@@ -7265,7 +7269,7 @@ table.shoping-cart-table tr td.desc {
 }
 body.landing-page {
   color: #676a6c;
-  font-family: 'Open Sans', helvetica, arial, sans-serif;
+  font-family: 'Open Sans', helvetica, arial, sans-serif, 'Noto Sans KR';
   background-color: #fff;
 }
 .landing-page span.navy {
@@ -7336,7 +7340,7 @@ body.landing-page {
 }
 .landing-page .navbar-default .nav li a {
   color: #fff;
-  font-family: 'Open Sans', helvetica, arial, sans-serif;
+  font-family: 'Open Sans', helvetica, arial, sans-serif, 'Noto Sans KR';
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -7520,9 +7524,6 @@ body.landing-page {
   position: absolute;
   right: 10px;
   top: 150px;
-}
-.landing-page .carousel-indicators {
-  padding-right: 60px;
 }
 .landing-page .caption-link {
   color: #fff;
@@ -8422,7 +8423,7 @@ body.skin-3 {
   background: #3e2c42;
 }
 body.md-skin {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, 'Noto Sans KR', sans-serif;
   background-color: #ffffff;
 }
 .md-skin .nav-header {
@@ -8435,10 +8436,10 @@ body.md-skin {
   color: #ffffff;
 }
 .md-skin .label {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', 'Noto Sans KR';
 }
 .md-skin .badge {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', 'Noto Sans KR';
 }
 .md-skin .font-bold {
   font-weight: 500;
@@ -8489,13 +8490,13 @@ body.md-skin {
   color: #ffffff;
 }
 .md-skin #nestable-output {
-  font-family: 'Montserrat', lucida grande, lucida sans unicode, helvetica, arial, sans-serif;
+  font-family: 'Montserrat', lucida grande, lucida sans unicode, helvetica, arial, 'Noto Sans KR', sans-serif;
 }
 .md-skin #nestable2-output {
-  font-family: 'Montserrat', lucida grande, lucida sans unicode, helvetica, arial, sans-serif;
+  font-family: 'Montserrat', lucida grande, lucida sans unicode, helvetica, arial, 'Noto Sans KR', sans-serif;
 }
 .md-skin .landing-page {
-  font-family: 'Montserrat', helvetica, arial, sans-serif;
+  font-family: 'Montserrat', helvetica, arial, 'Noto Sans KR', sans-serif;
 }
 .md-skin .landing-page.navbar-default.navbar-scroll {
   background-color: #fff !important;
@@ -8505,7 +8506,7 @@ body.md-skin {
   box-shadow: none;
 }
 .md-skin .landing-page.navbar-default .nav li a {
-  font-family: 'Montserrat', helvetica, arial, sans-serif;
+  font-family: 'Montserrat', helvetica, arial, 'Noto Sans KR', sans-serif;
 }
 .md-skin .nav > li > a {
   color: #676a6c;
@@ -8689,7 +8690,7 @@ body.md-skin {
   box-shadow: none;
 }
 .md-skin.landing-page .navbar-default .nav li a {
-  font-family: 'Montserrat', helvetica, arial, sans-serif;
+  font-family: 'Montserrat', helvetica, arial, 'Noto Sans KR', sans-serif;
 }
 .md-skin.landing-page .navbar-default .navbar-nav > li > a:hover {
   background: inherit;
