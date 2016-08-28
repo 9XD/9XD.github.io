@@ -1,6 +1,7 @@
 @primary: #65cca6;
 
 @font-primary: #676a6c;
+@font-secondary: #5cab8e;
 
 
 @color_1: #a7b1c2;
@@ -110,7 +111,20 @@ section#about {
 }
 
 
-
+.article {
+	.ibox-content>img, p>img, >img {
+		width: 100%;
+	}
+	p {
+		//margin-bottom: 4.5rem;
+	}
+	h4 {
+		color: @font-secondary;
+	}
+	blockquote {
+		word-break: break-word;
+	}
+}
 
 @-webkit-keyframes "sk-rotatePlane" {
 	0% {
@@ -7162,10 +7176,10 @@ dd.project-people {
 
 	}
 	.ibox-content {
-		padding: 40px;
+		padding: 15px;
 
-	    > h1, > h2, > h3, > h4, > h5, >h6 {
-			margin-top: 20px;
+		> h1, > h2, > h3, > h4, > h5, >h6 {
+			margin-top: 4.5rem;
 		}
 
 		> img {
