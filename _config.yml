@@ -29,7 +29,7 @@ project:
   meetup:
     name: '정기 모임'
     url: '/blog/meetup'
-    img: 'static/img/landing/menu_1.jpg'
+    img: 'static/img/landing/menu_1.JPG'
   blog:
     name: '블로그'
     url: '/blog/'
