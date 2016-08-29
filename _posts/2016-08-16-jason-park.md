@@ -177,7 +177,7 @@ Javascript가 브라우저에서도 돌아간다는 점을 이용해서 서버 �
 
 
 ________________________
-![Imgur](http://i.imgur.com/4RY80tX.png)
+![Imgur interviewer](http://i.imgur.com/4RY80tX.png)
 
 > 모기에 뜯겨가며 인터뷰 한 3인방. 이 인터뷰가 글을 읽으시는 분들께 조금이라도 도움이 될 수 있기를 바랍니다!
 

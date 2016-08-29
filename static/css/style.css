@@ -4,6 +4,7 @@
 /*
 9XD에서 추가한 스타일시트
 */
+/*-- 공통 --*/
 a {
   color: #65cca6;
   transition: all 0.4s ease;
@@ -12,10 +13,16 @@ a:hover {
   color: #339873;
   transition: all 0.4s ease;
 }
+/*-- 첫 페이지 --*/
 section#about p {
   color: #676a6c;
   font-size: 2rem;
 }
+/*-- 블로그 리스트 페이지 --*/
+ul#pag-itemContainer {
+  padding: 0;
+}
+/*-- 블로그 디테일 페이지 --*/
 .article .ibox-content > img,
 .article p > img,
 .article > img {
@@ -6268,6 +6275,9 @@ dd.project-people {
 }
 .article p > img {
   max-width: 640px;
+}
+.article p > img[alt~="interviewer"] {
+  max-width: 350px;
 }
 .article .ibox-content {
   padding: 15px;
