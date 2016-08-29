@@ -91,7 +91,7 @@
 9XD에서 추가한 스타일시트
 */
 
-//공통
+/*-- 공통 --*/
 @transition: all 0.4s ease;
 a {
 	color: @primary;
@@ -102,7 +102,7 @@ a {
 	}
 }
 
-//첫 페이지
+/*-- 첫 페이지 --*/
 section#about {
 	p {
 		color: @font-primary;
@@ -110,7 +110,12 @@ section#about {
 	}
 }
 
+/*-- 블로그 리스트 페이지 --*/
+ul#pag-itemContainer {
+	padding: 0;
+}
 
+/*-- 블로그 디테일 페이지 --*/
 .article {
 	.ibox-content>img, p>img, >img {
 		width: 100%;
@@ -7172,6 +7177,9 @@ dd.project-people {
 
 		> img {
 			max-width: 640px;
+			&[alt~="interviewer"] {
+				max-width: 350px;
+			}
 		}
 
 	}
