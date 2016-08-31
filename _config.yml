@@ -27,17 +27,17 @@ landing:
 # my projects
 project:
   meetup:
-    name: 'Meet Up'
+    name: '정기 모임'
     url: '/blog/meetup'
-    img: 'static/img/landing/9xd_meetup.jpg'
+    img: 'static/img/landing/menu_1.JPG'
   blog:
-    name: 'Blog'
+    name: '블로그'
     url: '/blog/'
-    img: 'static/img/landing/post.jpg'
+    img: 'static/img/landing/menu_2.jpg'
   undefined:
-    name: 'Undefined'
+    name: '새로운 영웅은 환영이야'
     url: '/'
-    img: 'static/img/landing/question_mark.png'
+    img: 'static/img/landing/menu_3.jpeg'
 
 # blog index
 index:

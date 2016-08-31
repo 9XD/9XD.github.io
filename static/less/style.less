@@ -1,6 +1,7 @@
 @primary: #65cca6;
 
 @font-primary: #676a6c;
+@font-secondary: #5cab8e;
 
 
 @color_1: #a7b1c2;
@@ -90,7 +91,7 @@
 9XD에서 추가한 스타일시트
 */
 
-//공통
+/*-- 공통 --*/
 @transition: all 0.4s ease;
 a {
 	color: @primary;
@@ -101,7 +102,7 @@ a {
 	}
 }
 
-//첫 페이지
+/*-- 첫 페이지 --*/
 section#about {
 	p {
 		color: @font-primary;
@@ -109,8 +110,26 @@ section#about {
 	}
 }
 
+/*-- 블로그 리스트 페이지 --*/
+ul#pag-itemContainer {
+	padding: 0;
+}
 
-
+/*-- 블로그 디테일 페이지 --*/
+.article {
+	.ibox-content>img, p>img, >img {
+		width: 100%;
+	}
+	p {
+		//margin-bottom: 4.5rem;
+	}
+	h4 {
+		color: @font-secondary;
+	}
+	blockquote {
+		word-break: break-word;
+	}
+}
 
 @-webkit-keyframes "sk-rotatePlane" {
 	0% {
@@ -7158,14 +7177,17 @@ dd.project-people {
 
 		> img {
 			max-width: 640px;
+			&[alt~="interviewer"] {
+				max-width: 350px;
+			}
 		}
 
 	}
 	.ibox-content {
-		padding: 40px;
+		padding: 15px;
 
-	    > h1, > h2, > h3, > h4, > h5, >h6 {
-			margin-top: 20px;
+		> h1, > h2, > h3, > h4, > h5, >h6 {
+			margin-top: 4.5rem;
 		}
 
 		> img {
@@ -8640,7 +8662,7 @@ body.landing-page {
 		padding-top: 80px;
 		padding-bottom: 90px;
 		background-color: @primary;
-		background-image: url('../img/landing/blog_background.jpg');
+		background-image: url('../img/landing/blog_background.png');
 	}
 	.big-icon {
 		font-size: 56px !important;
