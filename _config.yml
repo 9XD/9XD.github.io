@@ -46,7 +46,7 @@ index:
   interview: 'Interview'
 
 # facebook share
-facebook:
+facebook: True
 
 
 # disqus comment

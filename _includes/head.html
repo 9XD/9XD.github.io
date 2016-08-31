@@ -17,6 +17,14 @@
           {{ site.title }}
       {% endif %}
     </title>
+    <meta property="og:url"           content="{{page.url | prepend: site.url}}" />
+	<meta property="og:type"          content="website" />
+    {% if page.title != "index" %}
+    <meta property="og:title"         content="{{ site.title }}|{{ page.title }}" />
+    {% else %}
+    <meta property="og:title"         content="{{ site.title }}" />
+    {% endif %}
+
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ "static/img/favicon.ico" | prepend: site.baseurl }}">
 
