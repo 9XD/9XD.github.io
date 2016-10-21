@@ -1,66 +1,136 @@
 # 9XD.github.io
-9XD(9X 개발자 모임)의 블로그 입니다.
 
-## 로컬에서 서버 구동하기
-- 본 방법은 OSX 기준으로 합니다.
-- brew가 설치되어 있다고 가정합니다.
-- 환경은 루비 2.3.1에서 테스트하였습니다. 
-- 쓰고 나서 찾아보니 nodejs와 python2 버전 이상도 설치되어 있어야 한다고 합니다. 언제 쓰는 건지는 모르겠지만 설치해주세요.
+[9XD](9XD.github.io)(9X년생 개발자 모임)의 블로그 입니다.
 
-### 루비를 설치하자
-jekyll은 기본적으로 루비 기반이어서 루비를 설치해야 합니다.
-터미널을 열고 
+## 차례
 
-`brew install --update ruby`
+0. 들어가며
+1. brew 설치하기
+2. 루비와 파이썬 설치하기
+3. nodejs, gulp 설치하기
+4. 프로젝트 복제하기 및 의존 패키지 설치하기
+5. yaml 양식과 마크다운으로 포스트 작성하기
+6. 서버를 구동하여 포스트 확인하기
 
-명령어를 이용해 루비를 설치합니다.
+### 0. 들어가며
 
-### 프로젝트를 클론과 gem을 이용하여 패키지 설치
-루비가 설치 완료 되면, 작업할 폴더에서
+본 방법은 macOS 에서 루비 2.3.1 버전으로 작성되었습니다.
 
-`git clone https://github.com/9XD/9XD.github.io.git`
+### 1. brew 설치하기
 
-을 이용해 프로젝트를 클론합니다.
+[brew](http://brew.sh/)는 macOS용 패키지 관리자 입니다. [brew 웹사이트](http://brew.sh/)에 나와있는 최신 명령어를 붙여넣어 설치합니다 (잦은 패치로 인하여 명령어가 자주 바뀐다고 알려져 있습니다).
 
-클론 이후에는 프로젝트 폴더로 이동한 후 
+### 2. 루비와 파이썬 설치하기
 
-`bundle install`
+[Jekyll](http://jekyllrb.com/)은 [루비](http://ruby-lang.org/)를 기반으로 작성되어 있기 때문에 사용하려면 루비를 설치해야 합니다. 파이썬의 경우 gulp 를 이용한 서버 구동에 필요합니다.
 
-명령어를 사용하여 의존 패키지를 설치합니다.
+#### 루비
 
-### 마크다운을 작성하자
-마크다운 폴더는 _posts에 위치한다. 파일이름은
+터미널을 열고 다음과 같은 명령어를 이용하여 루비를 설치합니다:
 
-`YYYY-MM-DD-파일이름.markdown`
+```
+$ brew install --update ruby
+```
 
-과 같은 형식으로 이루어진다. 파일이름 부분은 상관 없지만 날짜 같은 경우는 형식에 꼭 맞춰주자! (날짜는 빌드 이후 디렉토리 구조가 된다.)
-마크다운 작성법은 다루지 않을 것이지만, 다른 마크다운과 달리 주의할 점이 있다. 문서 최상단에 대시(-) 3개로 감싸지는 yaml을 작성해줘야 한다. 글보다는 다음 예시를 보면 이해 가능하다.
+설치가 완료되면 다음과 같은 명령어를 이용하여 설치된 루비의 버전을 확인할 수 있습니다.
+
+```
+$ ruby -v
+ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-darwin15]
+```
+
+#### 파이썬
+
+[파이썬](http://www.python.org/) 역시 `brew install` 명령어를 이용하여 설치합니다:
+
+```
+$ brew install python
+```
+
+설치가 완료되면 다음과 같은 명령어를 이용하여 설치된 파이썬의 버전을 확인할 수 있습니다.
+
+```
+$ python -V
+Python 2.7.6
+```
+
+### 3. nodejs, gulp 설치하기
+
+Node.js 와 NPM (Node Package Manager) 를 다음과 같은 명령어로 설치합니다:
+
+```
+$ brew install node
+```
+
+설치가 완료되면 다음과 같은 명령어를 이용하여 설치된 Node.js와 npm의 버전을 확인할 수 있습니다:
+
+```
+$ node -v
+v0.10.31
+$ npm -v
+1.4.27
+```
+
+`gulp` 를 다음과 같은 명령어로 [설치](https://coolestguidesontheplanet.com/installing-gulp-on-osx-10-11-el-capitan/)합니다:
+    
+```
+$ npm install -g gulp
+```
+
+### 4. 프로젝트 복제하기 및 의존 패키지 설치하기
+
+작업할 폴더에서 다음과 같은 명령어를 이용하여 프로젝트를 클론한 후, 그 폴더로 이동합니다:
+
+```
+~ $ git clone https://github.com/9XD/9XD.github.io.git
+~ $ cd 9XD.github.io
+~/9XD.github.io $
+```
+
+프로젝트 폴더 내에서 다음 `bundle` 명령어를 사용하여 의존 패키지들을 설치합니다.
+
+```
+$ bundle install
+```
+
+### 5. yaml 양식과 마크다운으로 포스트 작성하기
+
+[마크다운](https://gist.github.com/ihoneymon/652be052a0727ad59601)으로 작성된 포스트는 `_posts` 에 저장합니다. 파일이름은 다음과 같은 형식으로 이루어져 있습니다:
+
+```
+YYYY-MM-DD-파일명.markdown
+```
+
+파일명은 상관없으나, 날짜의 경우 빌드 시 `/2016/10/20/post.html` 식으로 디렉토리 구조가 되기 때문에 형식에 맞추어주어야 합니다.
+
+일반적인 마크다운 파일과 달리, 문서 최상단에 대시(`-`) 3개로 감싸지는 yaml을 작성해야 합니다. 다음 예시와 같이 문서의 yaml과 함께 마크다운으로 블로그 포스트 내용을 작성합니다:
+
 ```
 ---
 layout: post
-title: 9XD 포스트 테스트입니다.
-desc: "9xd testetstestestestsetestest"
+title: 예시 9XD 포스트
+desc: "9xd example post description"
 keywords: "jekyll,blog,first,test,9xd,meetup"
-date: 2016-06-14
+date: 2016-10-20
 categories: [meetup]
 tags: [blog]
 --- 
-```
-이런 느낌으로 상단에 적어준 뒤 아래에 내용을 적는다.
 
-### 자 이제 진짜 서버를 구동해보자
-자 마크다운 작성까지 끝냈다면 이제 진짜 서버를 구동해서 확인할 차례다.
+예시 9XD 포스트 내용문입니다... 로렘 입썸 돌로르 싯 아멧...
+```
+
+### 6. 서버를 구동하여 포스트 확인하기
+
+서버를 구동하여 작성한 포스트를 확인할 수 있습니다. 앞서 설치한 gulp를 실행합니다:
 
 ```shell
 gulp
 ```
-`gulp`를 띄워 less컴파일, minify, uglify, image compress를 하고 서버를 실행시킨다.
-html이나 less 파일을 고치면 gulp가 watch하고 있다가 자동으로 리프레시를 해 준다(`Browsersync`)
 
-혹 빌드만 하고 싶다면 --watch 라는 옵션을 사용해 서버를 실행한 상태에서 변경사항을 바로바로 확인하면 된다.
+만약 실시간으로 변경사항을 확인하고 싶으면 jekyll의 `--watch` 옵션을 사용합니다:
 
 ```shell
 jekyll serve --watch
 ```
 
-이제 즐겁게 포스팅을 하면 된다!
+이제 즐겁게 포스팅을 하면 됩니다!
