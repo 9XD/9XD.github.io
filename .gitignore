@@ -1,3 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 _site
 node_modules
+
+# macOS .DS_Store
+.DS_Store
