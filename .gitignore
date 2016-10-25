@@ -4,3 +4,6 @@ node_modules
 
 # macOS .DS_Store
 .DS_Store
+
+# macOS rbenv environment settings
+.ruby-version
