@@ -139,7 +139,6 @@ DEPENDENCIES
   jekyll-feed
   jekyll-sass-converter
   jekyll-sitemap
-  json
   listen
   rouge
 
