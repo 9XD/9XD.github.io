@@ -1,6 +1,6 @@
 # 9XD.github.io
 
-[9XD](9XD.github.io)(9X년생 개발자 모임)의 블로그 입니다.
+[9XD](https://9XD.github.io)(9X년생 개발자 모임)의 블로그 입니다.
 
 ## 차례
 
